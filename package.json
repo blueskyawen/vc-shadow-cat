@@ -2,6 +2,10 @@
   "name": "vc-shadow-cat",
   "version": "1.0.0",
   "private": false,
+  "description": "基于Vue的lib组件库",
+  "keyword": "vue lib library",
+  "author": "blueskyawen",
+  "license": "MIT",
   "scripts": {
     "start": "npm run serve",
     "serve": "vue-cli-service serve --open",
@@ -9,6 +13,14 @@
     "lint": "vue-cli-service lint",
     "lib": "vue-cli-service build --target lib --name vc-shadow-cat --dest lib packages/index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blueskyawen/vc-shadow-cat.git"
+  },
+  "bugs": {
+    "url": "https://github.com/blueskyawen/vc-shadow-cat/issues"
+  },
+  "homepage": "http://blueskyawen.com/vc-shadow-cat/",
   "dependencies": {
     "core-js": "^2.6.5",
     "vue": "^2.6.10",
