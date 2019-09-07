@@ -2,8 +2,11 @@
   "name": "vc-shadow-cat",
   "version": "1.0.0",
   "private": false,
-  "description": "基于Vue的lib组件库",
-  "keyword": "vue lib library",
+  "description": "基于Vue的UI组件库",
+  "main": "lib/vc-shadow-cat.umd.min.js",
+  "keywords": [
+    "vue", "library", "vc-shadow-cat", "vcCat"
+  ],
   "author": "blueskyawen",
   "license": "MIT",
   "scripts": {
