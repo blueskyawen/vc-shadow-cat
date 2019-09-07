@@ -1,7 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>组件库测试</h2>
+    <h2>侧边栏</h2>
     <div class="opers">
       <vc-loading :type="'normal'" :size="'max'"></vc-loading>
       <vc-loading :type="'normal'" :size="'medium'"></vc-loading>
@@ -27,7 +26,7 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: '侧边栏',
   props: {
     msg: String
   },

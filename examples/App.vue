@@ -21,8 +21,11 @@
         </a>
       </div>
     </header>
-    <article></article>
-    <router-view/>
+    <article>
+      <transition mode="out-in">
+        <router-view/>
+      </transition>
+    </article>
   </div>
 </template>
 
@@ -54,6 +57,8 @@ export default {
     display: flex;
     align-items: center;
     box-shadow: 0 1px 6px #e6e6e6;
+    position: fixed;
+    z-index: 10;
     .app-icon {
       display: flex;
       align-items: center;
@@ -170,6 +175,49 @@ export default {
       }
     }
   }
+  article {
+    width: 100%;
+    height: 100%;
+    .v-enter-active, .v-leave-active {
+      transition: opacity .5s ease;
+    }
+    .v-enter, .v-leave-to {
+      opacity: 0;
+    }
+  }
+}
+
+/* 超小设备（手机，小于 768px） */
+/* Bootstrap 中默认情况下没有媒体查询 */
+@media (max-width: 767px) {
+  .main-app header {
+    height: auto;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    z-index: 5000;
+  }
+  .main-app header .app-icon {
+    width: 100%;
+    position: relative;
+  }
+  .main-app header .app-icon .nc-anticon-menu-t {
+    margin-left:30px;
+  }
+  .main-app header .app-icon .app-title {
+    margin-left: 20px;
+  }
+  .main-app header .app-menu {
+    width: 100%;
+    height: 45px;
+    background: #0058b3;
+  }
+  .main-app header .app-menu a.github-item {
+    height: 45px;
+  }
+  .main-app article {
+    margin-top: 100px;
+  }
 }
 /* 小型设备（平板电脑，768px 起） */
 @media (min-width: 768px) {
@@ -178,13 +226,6 @@ export default {
   }
   .main-app header .app-menu {
     width: 70%;
-  }
-  .main-app article .side-bars {
-    width: 30%;
-  }
-  .main-app article .content {
-    width: 70%;
-    left:30%;
   }
 }
 /* 中型设备（台式电脑，992px 起） */
@@ -195,13 +236,6 @@ export default {
   .main-app header .app-menu {
     width: 75%;
   }
-  .main-app article .side-bars {
-    width: 25%;
-  }
-  .main-app article .content {
-    width: 75%;
-    left:25%;
-  }
 }
 /* 大型设备（大台式电脑，1200px 起） */
 @media (min-width: 1200px) {
@@ -210,13 +244,6 @@ export default {
   }
   .main-app header .app-menu {
     width: 80%;
-  }
-  .main-app article .side-bars {
-    width: 20%;
-  }
-  .main-app article .content {
-    width: 80%;
-    left:20%;
   }
 }
 </style>
