@@ -2,7 +2,7 @@ const path = require('path')
 
 module.exports = {
   baseUrl: '/',
-  publicPath: process.env.NODE_ENV === 'production' ? '/vue-lib/' : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/vc-shadow-cat/' : '/',
   pages: {
     index: {
       entry: 'examples/main.js',
