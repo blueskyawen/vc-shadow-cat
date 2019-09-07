@@ -1,10 +1,13 @@
 import vcSwitch from './vc-switch'
 import vcLoading from './vc-loading'
 import vcFilters from './vc-filters'
+import vcButton from './vc-button'
+import vcCheckbox from './vc-checkbox'
+import vcForm from './vc-form'
 
 // 存储组件列表
 const components = [
-  vcSwitch, vcLoading
+  vcSwitch, vcLoading, vcButton, vcCheckbox, ...vcForm
 ]
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，则所有的组件都将被注册
@@ -33,5 +36,8 @@ if (typeof window !== 'undefined' && window.Vue) {
 export default {
   install,
   vcSwitch,
-  vcLoading
+  vcLoading,
+  vcButton,
+  vcCheckbox,
+  ...vcForm
 }

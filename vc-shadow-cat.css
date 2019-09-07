@@ -4,3 +4,8 @@ a {
 button {
     outline: none !important;
 }
+
+body {
+    margin: 0;
+    padding: 0;
+}

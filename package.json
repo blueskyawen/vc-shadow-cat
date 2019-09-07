@@ -5,7 +5,10 @@
   "description": "基于Vue的UI组件库",
   "main": "lib/vc-shadow-cat.umd.min.js",
   "keywords": [
-    "vue", "library", "vc-shadow-cat", "vcCat"
+    "vue",
+    "library",
+    "vc-shadow-cat",
+    "vcCat"
   ],
   "author": "blueskyawen",
   "license": "MIT",
