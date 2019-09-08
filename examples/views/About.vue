@@ -1,15 +1,20 @@
 <template>
   <div class="main-content">
     <div class="sideBar">
-      <router-link v-for="menu in menuOptions" :key="menu.name" :to="menu.routeLink">{{menu.label}}</router-link>
+      <side-bar :options="menuOptions"></side-bar>
     </div>
-    <div class="content">content</div>
+    <div class="content">
+      <router-view/>
+    </div>
   </div>
 </template>
 
 <script>
+import SideBar from '@/components/SideBar'
+
 export default {
-  name: 'about',
+  name: 'About',
+  components: { SideBar },
   data () {
     return {
       menuOptions: [
@@ -17,6 +22,11 @@ export default {
         { label: '快速上手', name: 'start', routeLink: 'start' }
       ]
     }
+  },
+  created () {
+    this.menuOptions.forEach(option => {
+      option.routeLink = `/about/${option.routeLink}`
+    })
   }
 }
 </script>

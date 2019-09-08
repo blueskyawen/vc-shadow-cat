@@ -1,38 +1,18 @@
 <template>
-  <div class="hello">
-    <h2>侧边栏</h2>
-    <div class="opers">
-      <vc-loading :type="'normal'" :size="'max'"></vc-loading>
-      <vc-loading :type="'normal'" :size="'medium'"></vc-loading>
-      <vc-loading :size="'min'"></vc-loading>
-    </div>
-    <div class="opers">
-      <vc-loading :type="'clover'" :size="'max'"></vc-loading>
-      <vc-loading :type="'clover'" :size="'medium'"></vc-loading>
-      <vc-loading :type="'clover'" :size="'min'"></vc-loading>
-    </div>
-    <div class="opers">
-      <vc-loading class="oper-item" :type="'horizontal'" :size="'max'"></vc-loading>
-      <vc-loading class="oper-item" :type="'horizontal'" :size="'medium'"></vc-loading>
-      <vc-loading class="oper-item" :type="'horizontal'" :size="'min'"></vc-loading>
-    </div>
-    <div class="opers">
-      <vc-switch class="oper-item" v-model="aggres[0]"></vc-switch>
-      <vc-switch class="oper-item" v-model="aggres[1]" :tip-labels="['是','否']"></vc-switch>
-      <vc-switch class="oper-item" v-model="aggres[2]" :type="'min'" :disabled="true"></vc-switch>
-    </div>
+  <div class="sideBars">
+    <router-link v-for="menu in options" :key="menu.name" :to="menu.routeLink">{{menu.label}}</router-link>
   </div>
 </template>
 
 <script>
 export default {
-  name: '侧边栏',
+  name: 'SideBar',
   props: {
-    msg: String
-  },
-  data () {
-    return {
-      aggres: [true, false, true]
+    options: {
+      type: Array,
+      default: function () {
+        return []
+      }
     }
   }
 }
@@ -40,22 +20,25 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
-h3 {
-  margin: 40px 0 0;
-}
-.opers {
-  padding: 5px 0;
-}
-.oper-item {
-  margin-right: 20px;
-}
-.vc-from-group {
+.sideBars {
   width: 100%;
-  .vc-from-label {
-    width: 20%;
-  }
-  .vc-from-control {
-    width: 80%;
+  a {
+    text-decoration: none;
+    color: #666;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    box-sizing: border-box;
+    &:hover {
+      color: #009973;
+    }
+    &.router-link-active {
+      background: #ebfafa;
+      color: #009973;
+      border-right: solid 3px #1aa3ff;
+    }
   }
 }
 </style>

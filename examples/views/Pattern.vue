@@ -1,26 +1,36 @@
 <template>
   <div class="main-content">
     <div class="sideBar">
-      <router-link v-for="menu in menuOptions" :key="menu.name" :to="menu.routeLink">{{menu.label}}</router-link>
+      <side-bar :options="menuOptions"></side-bar>
     </div>
-    <div class="content">content</div>
+    <div class="content">
+      <router-view/>
+    </div>
   </div>
 </template>
 
 <script>
+import SideBar from '@/components/SideBar'
+
 export default {
-  name: 'pattern',
+  name: 'Pattern',
+  components: { SideBar },
   data () {
     return {
       menuOptions: [
-        { label: '过滤器', name: 'template', routeLink: 'template' },
-        { label: '珊格系统', name: 'template', routeLink: 'template' },
-        { label: '列表组', name: 'template', routeLink: 'template' },
-        { label: '表单', name: 'template', routeLink: 'template' },
-        { label: '表单实例', name: 'template', routeLink: 'template' },
-        { label: '照片浏览', name: 'template', routeLink: 'template' }
+        { label: '过滤器', name: 'filter', routeLink: 'filter' },
+        { label: '珊格系统', name: 'cols', routeLink: 'cols' },
+        { label: '列表组', name: 'listGroup', routeLink: 'listGroup' },
+        { label: '表单', name: 'form', routeLink: 'form' },
+        { label: '表单实例', name: 'formDemo', routeLink: 'formDemo' },
+        { label: '照片浏览', name: 'photoView', routeLink: 'photoView' }
       ]
     }
+  },
+  created () {
+    this.menuOptions.forEach(option => {
+      option.routeLink = `/pattern/${option.routeLink}`
+    })
   }
 }
 </script>

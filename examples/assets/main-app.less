@@ -6,28 +6,10 @@
   top: 60px;
   .sideBar {
     height: inherit;
-    border-right: solid 1px #e6e6e6;
-    overflow-y: auto;
     transform: translateX(0%);
     transition: transform 500ms;
-    a {
-      text-decoration: none;
-      color: #666;
-      font-size: 18px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 15px 0;
-      box-sizing: border-box;
-      &:hover {
-        color: #009973;
-      }
-      &.router-link-active {
-        background: #ebfafa;
-        color: #009973;
-        border-right: solid 3px #1aa3ff;
-      }
-    }
+    overflow-y: auto;
+    border-right: solid 1px #e6e6e6;
   }
   .content {
     padding: 30px;
