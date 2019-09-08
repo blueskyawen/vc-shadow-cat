@@ -4,7 +4,9 @@
       <side-bar :options="menuOptions"></side-bar>
     </div>
     <div class="content">
-      <router-view/>
+      <transition mode="out-in">
+        <router-view class="md"/>
+      </transition>
     </div>
   </div>
 </template>
@@ -36,5 +38,5 @@ export default {
 </script>
 
 <style scoped lang="less">
-  @import "../assets/main-app";
+  @import "../style/main-app";
 </style>

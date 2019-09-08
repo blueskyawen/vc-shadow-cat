@@ -3,7 +3,8 @@
   height: 100%;
   display: flex;
   position: fixed;
-  top: 60px;
+  padding-top: 60px;
+  box-sizing: border-box;
   .sideBar {
     height: inherit;
     transform: translateX(0%);
@@ -12,9 +13,10 @@
     border-right: solid 1px #e6e6e6;
   }
   .content {
-    padding: 0 50px;
+    padding: 0 50px 50px;
     box-sizing: border-box;
     height: inherit;
+    width: inherit;
     overflow-y: auto;
     overflow-x: hidden;
     transition: all 500ms;

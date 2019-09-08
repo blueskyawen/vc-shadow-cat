@@ -29,7 +29,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 15px 0;
+    padding: 12px 0;
     box-sizing: border-box;
     &:hover {
       color: #009973;

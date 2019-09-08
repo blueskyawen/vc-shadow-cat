@@ -23,7 +23,7 @@ export default new Router({
         },
         {
           path: 'loading',
-          component: () => import('./docs/about/loading.md')
+          component: () => import('./docs/element/loading.md')
         },
         {
           path: '*',
@@ -41,6 +41,14 @@ export default new Router({
           redirect: 'aboutMe'
         },
         {
+          path: 'aboutMe',
+          component: () => import('./docs/about/about-me.md')
+        },
+        {
+          path: 'start',
+          component: () => import('./docs/about/start.md')
+        },
+        {
           path: '*',
           component: NotFound
         }
@@ -54,6 +62,10 @@ export default new Router({
         {
           path: '',
           redirect: 'filter'
+        },
+        {
+          path: 'filter',
+          component: () => import('./docs/pattern/filter.md')
         },
         {
           path: '*',
