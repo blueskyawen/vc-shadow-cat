@@ -22,6 +22,10 @@ export default new Router({
           redirect: 'loading'
         },
         {
+          path: 'loading',
+          component: () => import('./docs/about/loading.md')
+        },
+        {
           path: '*',
           component: NotFound
         }
