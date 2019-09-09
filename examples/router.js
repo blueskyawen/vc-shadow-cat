@@ -26,6 +26,26 @@ export default new Router({
           component: () => import('./docs/element/loading.md')
         },
         {
+          path: 'button',
+          component: () => import('./docs/element/button.md')
+        },
+        {
+          path: 'switch',
+          component: () => import('./docs/element/switch.md')
+        },
+        {
+          path: 'checkbox',
+          component: () => import('./docs/element/checkbox.md')
+        },
+        {
+          path: 'radio',
+          component: () => import('./docs/element/radio.md')
+        },
+        {
+          path: 'input',
+          component: () => import('./docs/element/input.md')
+        },
+        {
           path: '*',
           component: NotFound
         }

@@ -21,11 +21,9 @@
         </a>
       </div>
     </header>
-    <article>
-      <transition mode="out-in">
-        <router-view/>
-      </transition>
-    </article>
+    <transition mode="out-in">
+      <router-view/>
+    </transition>
   </div>
 </template>
 
@@ -34,12 +32,11 @@ export default {
   name: 'app',
   data () {
     return {
-      isExpand: true
     }
   },
   methods: {
     changeExtend: function () {
-      this.isExpand = !this.isExpand
+      this.$store.commit('toggleSideBar')
     }
   }
 }
@@ -59,6 +56,7 @@ export default {
     box-shadow: 0 1px 6px #e6e6e6;
     position: fixed;
     z-index: 10;
+    background: #fff;
     .app-icon {
       display: flex;
       align-items: center;
@@ -175,15 +173,11 @@ export default {
       }
     }
   }
-  article {
-    width: 100%;
-    height: 100%;
-    .v-enter-active, .v-leave-active {
-      transition: opacity .5s ease;
-    }
-    .v-enter, .v-leave-to {
-      opacity: 0;
-    }
+  .v-enter-active, .v-leave-active {
+    transition: opacity .5s ease;
+  }
+  .v-enter, .v-leave-to {
+    opacity: 0;
   }
 }
 
@@ -192,31 +186,36 @@ export default {
 @media (max-width: 767px) {
   .main-app header {
     height: auto;
+    width: 100%;
     flex-direction: column;
     position: fixed;
     top: 0;
     z-index: 5000;
-  }
-  .main-app header .app-icon {
-    width: 100%;
-    position: relative;
-  }
-  .main-app header .app-icon .nc-anticon-menu-t {
-    margin-left:30px;
-  }
-  .main-app header .app-icon .app-title {
-    margin-left: 20px;
-  }
-  .main-app header .app-menu {
-    width: 100%;
-    height: 45px;
-    background: #0058b3;
-  }
-  .main-app header .app-menu a.github-item {
-    height: 45px;
-  }
-  .main-app article {
-    margin-top: 100px;
+    .app-icon {
+      height: 60px;
+      width: inherit;
+      position: relative;
+      border-bottom: solid 1px #e6e6e6;
+      .nc-anticon-menu-t {
+        margin-left:30px;
+      }
+      &:after {
+        display:none;
+      }
+    }
+    .app-menu {
+      width: inherit;
+      height: 45px;
+      .menu-item a {
+        font-size: 18px;
+        margin-left: 30px;
+      }
+      .github-item {
+        height: inherit;
+        font-size: 26px;
+        right:30px;
+      }
+    }
   }
 }
 /* 小型设备（平板电脑，768px 起） */

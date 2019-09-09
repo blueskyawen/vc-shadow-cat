@@ -1,5 +1,5 @@
 <template>
-  <div class="main-content">
+  <div class="main-content" :class="{'sideBar-hidden': !isShowSideBar}">
     <div class="sideBar">
       <side-bar :options="menuOptions"></side-bar>
     </div>
@@ -8,11 +8,13 @@
         <router-view class="md"/>
       </transition>
     </div>
+    <div class="mobile-shade" v-if="isShowSideBar" @click="changeExtend"></div>
   </div>
 </template>
 
 <script>
 import SideBar from '@/components/SideBar'
+import { mapState } from 'vuex'
 
 export default {
   name: 'Element',
@@ -24,7 +26,7 @@ export default {
         { label: '按钮', name: 'button', routeLink: 'button' },
         { label: '开关', name: 'switch', routeLink: 'switch' },
         { label: '单选框', name: 'radio', routeLink: 'radio' },
-        { label: '多选框', name: 'checkbox', routeLink: 'checkbox' },
+        { label: '复选框', name: 'checkbox', routeLink: 'checkbox' },
         { label: '输入框', name: 'input', routeLink: 'input' },
         { label: '数字输入框', name: 'numInput', routeLink: 'numInput' },
         { label: '选项卡', name: 'tab', routeLink: 'tab' },
@@ -60,6 +62,16 @@ export default {
     this.menuOptions.forEach(option => {
       option.routeLink = `/element/${option.routeLink}`
     })
+  },
+  computed: {
+    ...mapState([
+      'isShowSideBar'
+    ])
+  },
+  methods: {
+    changeExtend: function () {
+      this.$store.commit('toggleSideBar')
+    }
   }
 }
 </script>

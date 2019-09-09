@@ -37,7 +37,7 @@ export default {
     &.router-link-active {
       background: #ebfafa;
       color: #009973;
-      border-right: solid 3px #1aa3ff;
+      border-left: solid 3px #1aa3ff;
     }
   }
 }

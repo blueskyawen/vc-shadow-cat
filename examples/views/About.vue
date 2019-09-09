@@ -1,5 +1,5 @@
 <template>
-  <div class="main-content">
+  <div class="main-content" :class="{'sideBar-hidden': !isShowSideBar}">
     <div class="sideBar">
       <side-bar :options="menuOptions"></side-bar>
     </div>
@@ -8,11 +8,13 @@
         <router-view class="md"/>
       </transition>
     </div>
+    <div class="mobile-shade" v-if="isShowSideBar" @click="changeExtend"></div>
   </div>
 </template>
 
 <script>
 import SideBar from '@/components/SideBar'
+import { mapState } from 'vuex'
 
 export default {
   name: 'About',
@@ -29,6 +31,16 @@ export default {
     this.menuOptions.forEach(option => {
       option.routeLink = `/about/${option.routeLink}`
     })
+  },
+  computed: {
+    ...mapState([
+      'isShowSideBar'
+    ])
+  },
+  methods: {
+    changeExtend: function () {
+      this.$store.commit('toggleSideBar')
+    }
   }
 }
 </script>
