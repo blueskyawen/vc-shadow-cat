@@ -21,7 +21,7 @@
           <span v-else>收起代码</span>
       </span>
     </div>
-    <div class="demo-block-code"
+    <div class="demo-block-code" :class="{'has-vc-demo': vDemo}"
          v-show="showCode">
       <slot name="highlight"></slot>
     </div>
@@ -31,6 +31,9 @@
 <script type="text/babel">
 export default {
   name: 'DemoBlock',
+  props: {
+    vDemo: Boolean
+  },
   data () {
     return {
       showCode: false
@@ -135,6 +138,9 @@ export default {
       pre {
         margin: 0;
         padding: 0;
+      }
+      &.has-vc-demo .highlight > pre:first-of-type {
+        display: none;
       }
     }
   }

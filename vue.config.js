@@ -44,7 +44,6 @@ module.exports = {
             },
 
             render: function (tokens, idx) {
-              console.log(tokens, idx)
               if (tokens[idx].nesting === 1) {
                 // 1.获取第一行的内容使用markdown渲染html作为组件的描述
                 let demoInfo = tokens[idx].info.trim().match(/^demo\s+(.*)$/)
@@ -52,11 +51,19 @@ module.exports = {
                 let descriptionHTML = description ? markdownRender.render(description) : ''
                 // 2.获取代码块内的html和js代码
                 let content = tokens[idx + 1].content
+                let isVcDemo = content.indexOf('VcDemo') !== -1
                 // 3.使用自定义开发组件【DemoBlock】来包裹内容并且渲染成案例和代码示例
-                return `<demo-block>
+                if (isVcDemo) {
+                  return `<demo-block :vDemo="true">
                 <div class="source" slot="source">${content}</div>
                 ${descriptionHTML}
                 <div class="highlight" slot="highlight">`
+                } else {
+                  return `<demo-block :vDemo="false">
+                <div class="source" slot="source">${content}</div>
+                ${descriptionHTML}
+                <div class="highlight" slot="highlight">`
+                }
               } else {
                 return '</div></demo-block>\n'
               }
