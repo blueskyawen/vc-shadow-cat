@@ -66,6 +66,10 @@ export default {
     min-width: 60px;
     min-height: 20px;
     outline: none;
+    max-width: 100%;
+    &:active {
+      outline: none;
+    }
     &.button-add{
       background-color: #4db251;
       &:hover, &:focus {
