@@ -1,2 +1,2 @@
 (window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0f0006"],{"9b07":function(n,e,t){"use strict";t.r(e);var c=function(){var n=this,e=n.$createElement;n._self._c;return n._m(0)},r=[function(){var n=this,e=n.$createElement,t=n._self._c||e;return t("section",[t("h1",[n._v("过滤器")]),t("p",[n._v("用于一些常见的文本格式化和数据的显示转化，可用在插值表达式和属性绑定表达式，类似于angular里的管道。\n本库封装了一些常见的过滤器方便使用。")])])}],u=t("2877"),l={},a=Object(u["a"])(l,c,r,!1,null,null,null);e["default"]=a.exports}}]);
-//# sourceMappingURL=chunk-2d0f0006.2cc34cd1.js.map
+//# sourceMappingURL=chunk-2d0f0006.38f73098.js.map
