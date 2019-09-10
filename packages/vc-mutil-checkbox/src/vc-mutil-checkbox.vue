@@ -1,7 +1,7 @@
 <template>
   <span class="vc-mutil-checkbox">
     <span class="checkbox-item" v-for="option in options" :key="option.value">
-      <vc-checkbox v-model="option.checked" :value="option.name" @change="handleChange"></vc-checkbox>
+      <vc-checkbox v-model="option.checked" :value="option.name" @change="handleChange()"></vc-checkbox>
     </span>
   </span>
 </template>
@@ -30,6 +30,8 @@ export default {
     this.options.forEach(option => {
       if (this.value.includes(option.value)) {
         option.checked = true
+      } else {
+        option.checked = false
       }
     })
   },

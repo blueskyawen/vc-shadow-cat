@@ -1,8 +1,8 @@
 <template>
   <span class="vc-checkbox">
     <span class="_checkbox" :class="{disabled: disabled}">
-      <span class="check_input" :class="{active: checked, checkall: checked}">
-        <input type="checkbox" :value="value" :checked="checked" @change="$emit('change', $event.target.checked)" />
+      <span class="check_input" :class="checkClass">
+        <input type="checkbox" :value="value" :checked="checkFlag" @click="change" />
       </span>
       <span class="check_title" v-if="value">{{value}}</span>
     </span>
@@ -19,12 +19,56 @@ export default {
   props: {
     value: String,
     checked: {
-      type: Boolean,
+      type: [Boolean, Number],
       default: true
     },
     disabled: {
       type: Boolean,
       default: false
+    },
+    partial: {
+      type: Boolean,
+      default: false
+    }
+  },
+  data () {
+    return {
+      checkFlag: [Boolean, Number]
+    }
+  },
+  created: function () {
+    if (this.partial) {
+      this.checkFlag = [0, 1, 2].includes(this.checked) ? this.checked : 0
+    } else {
+      this.checkFlag = !!this.checked
+    }
+  },
+  computed: {
+    checkClass: function () {
+      return { 'active': this.checkFlag,
+        'checkall': this.checkFlag === true || this.checkFlag === 1,
+        'partcheck': this.checkFlag === 2 }
+    }
+  },
+  methods: {
+    change: function () {
+      if (this.disabled) return
+      if (this.partial) {
+        if (this.checkFlag === 0) {
+          this.checkFlag = 2
+        } else if (this.checkFlag === 1) {
+          this.checkFlag = 0
+        } else if (this.checkFlag === 2) {
+          this.checkFlag = 1
+        }
+      } else {
+        if (this.checkFlag === true) {
+          this.checkFlag = false
+        } else if (this.checkFlag === false) {
+          this.checkFlag = true
+        }
+      }
+      this.$emit('change', this.checkFlag)
     }
   }
 }
@@ -97,8 +141,8 @@ export default {
       &.disabled{
         cursor:not-allowed;
         .check_input{
-          background-color:#ccc;
-          border-color:#999;
+          background-color: #ccc;
+          border-color: #999;
           opacity: 0.6;
           cursor:not-allowed;
           &:after {

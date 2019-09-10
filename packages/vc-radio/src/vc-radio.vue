@@ -1,9 +1,10 @@
 <template>
   <div class="vc-radio">
     <span v-for="option in options" :key="option.value" class="radio-group">
-      <span class="radio" :class="isChecked(option)">
+      <span class="radio"
+            :class="{ active: option.value === value, default: option.value !== value, disabled: option.disabled }">
         <input type="radio" :disabled="option.disabled" :checked="option.value === value"
-               :value="option.value" @change="$emit('input', $event.target.value)"/>
+               :value="option.value" @click="change(option, $event)"/>
       </span>
       <span :for="option.value">{{option.label}}</span>
     </span>
@@ -15,10 +16,7 @@ export default {
   name: 'vc-radio',
   props: {
     options: {
-      type: Array,
-      default: function () {
-        return []
-      }
+      type: Array
     },
     value: String
   },
@@ -37,11 +35,10 @@ export default {
       }
     }
   },
-  computed: {
-    isChecked: function (item) {
-      return { active: item.value === this.value,
-        default: item.value !== this.value,
-        disabled: item.disabled }
+  methods: {
+    change: function (option, $event) {
+      if (option.disabled || this.isDisable) return
+      this.$emit('input', $event.target.value)
     }
   }
 }
@@ -80,7 +77,7 @@ export default {
             top:-1px;
             left:-3px;
             &:hover{
-              cursor:not-allowed;
+              cursor:pointer;
             }
           }
           &.disabled{

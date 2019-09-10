@@ -1,25 +1,27 @@
-# 单选框
-
-单选框radio，用于表单的单选项目  
-
-## 使用方式
-
-### 基本样式
-
-:::demo
-```html
-<RadioVcDemo></RadioVcDemo>
-```
-```javascript
 <template>
-  <div class="SwitchDemo">
+  <div class="RadioVcDemo">
+    <div v-if="typez === 'normal'">
       <vc-radio :options="options" v-model="checkValue"></vc-radio>
+    </div>
+    <div v-if="typez === 'disable'">
+      <p>默认选中值在禁用选项里不可选择</p>
+      <vc-radio :options="options2" v-model="checkValue"></vc-radio>
+      <p>默认选中值不在禁用选项里可选择</p>
+      <vc-radio :options="options3" v-model="checkValue"></vc-radio>
+    </div>
+    <p class="check-value">选中值: {{checkValue}}</p>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'SwitchDemo',
+  name: 'RadioVcDemo',
+  props: {
+    typez: {
+      type: String,
+      default: 'normal'
+    }
+  },
   data () {
     return {
       options: [
@@ -27,33 +29,6 @@ export default {
         { label: '黄磊', value: 'huanlei', disabled: false },
         { label: '大华', value: 'dahua', disabled: false }
       ],
-      checkValue: 'huanlei'
-    }
-  }
-}
-</script>
-```
-:::
-
-### 禁用样式
-
-:::demo
-```html
-<RadioVcDemo :typez="'disable'"></RadioVcDemo>
-```
-```javascript
-<template>
-  <div class="SwitchDemo">
-      <vc-radio :options="options2" v-model="checkValue"></vc-radio>
-      <vc-radio :options="option3" v-model="checkValue"></vc-radio>
-  </div>
-</template>
-
-<script>
-export default {
-  name: 'SwitchDemo',
-  data () {
-    return {
       options2: [
         { label: '何炅', value: 'hejiong', disabled: true },
         { label: '黄磊', value: 'huanlei', disabled: true },
@@ -69,12 +44,11 @@ export default {
   }
 }
 </script>
-```
-:::
 
-## 属性参数
-
-| 参数 | 说明 |	类型 |	可选值 |	默认值 |
-|---|---|---|---|---|
-| options | 项目列表 | array | 无 | [] |
-| value | 选中值 | string | 无 | 无 |
+<style scoped lang="less">
+.RadioVcDemo {
+  .check-value {
+    margin: 15px 10px 5px;
+  }
+}
+</style>

@@ -28,6 +28,7 @@ export default {
   }
 }
 </script>
+```
 :::
 
 ### 个性化文本样式
