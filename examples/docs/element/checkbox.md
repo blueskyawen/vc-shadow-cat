@@ -98,8 +98,8 @@ export default {
 | 参数 | 说明 |	类型 |	可选值 |	默认值 |
 |---|---|---|---|---|
 | checked | 选中标志 | boolean/number | true/false,0/1(全部)/2(部分) | true |
-| disabled | 是否禁用 | boolean | true,false | false |
-| partial | 是否部分选择 | boolean | true,false | false |
+| disabled | 禁用 | boolean | true,false | false |
+| partial | 部分选择 | boolean | true,false | false |
 | value | 选项文本 | string | 无 | 无 |
 
 ### vc-mutil-checkbox

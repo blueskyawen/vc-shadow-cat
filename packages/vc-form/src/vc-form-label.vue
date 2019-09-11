@@ -1,5 +1,6 @@
 <template>
   <div class="vc-form-group-label" :style="{height: height}" :class="labelClasses">
+    <span class="vc-form-group-label-require" v-if="required">*</span>
     <label>
       <slot></slot>
     </label>
@@ -17,15 +18,14 @@ export default {
       type: Boolean,
       default: false
     },
-    require: {
+    required: {
       type: Boolean,
       default: true
     }
   },
   computed: {
     labelClasses: function () {
-      return { 'vc-form-noshow-option': this.noshowOption,
-        'vc-form-group-label-require': this.require }
+      return { 'vc-form-noshow-option': this.noshowOption }
     }
   }
 }

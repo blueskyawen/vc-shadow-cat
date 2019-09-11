@@ -1,5 +1,5 @@
 <template>
-  <button :class="spinClasses" :style="buttonStyles">
+  <button :class="spinClasses" :style="buttonStyles" v-on="$listeners">
     <span v-if="showAdd">+</span>
     <span v-if="loading" class="loading"></span>
     <span :class="{dynamic1: suffix}">
@@ -11,6 +11,7 @@
 <script>
 export default {
   name: 'vc-button',
+  inheritAttrs: false,
   props: {
     type: { type: String, default: 'normal' },
     size: { type: String, default: 'min' },

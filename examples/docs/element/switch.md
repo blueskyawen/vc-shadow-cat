@@ -91,5 +91,5 @@ export default {
 |---|---|---|---|---|
 | type | 尺寸大小 | string | max,min | max |
 | switch | 开关值 | boolean | true,false | true |
-| disabled | 是否禁用 | boolean | true,false | false |
+| disabled | 禁用 | boolean | true,false | false |
 | tipLabels | 自定义文本 | array | 无 | [] |

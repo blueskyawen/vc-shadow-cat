@@ -66,9 +66,9 @@
 |---|---|---|---|---|
 | type | 类型样式 | string | normal,add,major,cancel | normal |
 | size | 尺寸大小 | string | max,min,custom | min |
-| disabled | 是否禁用 | boolean | true,false | false |
+| disabled | 禁用 | boolean | true,false | false |
 | loading | 是否load | boolean | true,false | false |
-| dnymic | 是否动态效果 | boolean | true,false | false |
+| dnymic | 动态效果 | boolean | true,false | false |
 | height | 自定义高度 | string | px或百分比 | 36px |
 | width | 自定义宽度 | string | px或百分比 | 100% |
 
