@@ -1,20 +1,20 @@
 <template>
   <div class="vc-info">
     <transition name="fadeTop">
-      <div v-if="showTopInfo" class="top-info'" :class="infoClass">
-        <div :class="{'msg': type === 'success'}"><slot></slot></div>
+      <div v-if="showTopInfo" class="top-info" :class="infoClass" :style="topInfoStyle">
+        <div :class="{'msg': type !== 'success'}"><slot></slot></div>
         <div v-if="type !== 'success'" class="oper-cancel"><span @click="cancel">x</span></div>
       </div>
     </transition>
 
     <transition name="fadeRight">
-      <div v-if="showRightInfo" class="right-info'">
+      <div v-if="showRightInfo" class="right-info" :style="topInfoStyle">
         <div class="header">
           <span @click="cancel">×</span>
         </div>
         <div class="acticle">
           <div class="gradetitle">
-            <span class="icon" :class="infoClasszz">{{iocnType}}</span>
+            <span class="icon" :class="infoClasszz">{{iconType}}</span>
             <span class="title">{{headerTitle}}</span>
           </div>
           <div class="content">
@@ -56,6 +56,14 @@ export default {
     headerTitle: {
       type: String,
       default: ''
+    },
+    zIndex: {
+      type: Number,
+      default: 9000
+    },
+    top: {
+      type: String,
+      default: '10px'
     }
   },
   data () {
@@ -64,7 +72,11 @@ export default {
     }
   },
   updated: function () {
-    console.log('setTimeout')
+    if (this.show && this.type === 'success') {
+      setTimeout(() => {
+        this.cancel()
+      }, this.timerLen)
+    }
   },
   created: function () {
     this.iconType = this.type === 'success' ? '√' : this.type === 'warn' ? '!' : '×'
@@ -85,6 +97,9 @@ export default {
     },
     showRightInfo: function () {
       return this.show && this.location === 'right'
+    },
+    topInfoStyle: function () {
+      return { 'z-index': this.zIndex, 'top': this.top }
     }
   },
   methods: {
@@ -97,12 +112,12 @@ export default {
 
 <style scoped lang="less">
 .vc-info {
-  position:fixed;
-  z-index: 9000;
+  width: 100%;
   > div {
+    position:fixed;
+    z-index: 9000;
     &.top-info {
       min-height:45px;
-      top:2px;
       left:50%;
       transform: translateX(-50%);
       border-radius:2px;
@@ -157,7 +172,6 @@ export default {
       width:450px;
       min-height:180px;
       max-width: 70%;
-      top:30px;
       right:30px;
       border:solid 1px #e6e6e6;
       border-radius: 5px;
@@ -165,17 +179,15 @@ export default {
       background: #fff;
       display:flex;
       flex-direction:column;
-      -webkit-animation: modal-out-3 500ms;
-      animation: modal-out-3  500ms;
-      -moz-animation: modal-out-3 500ms;
       &.fadeRight-enter, &.fadeRight-leave-to {
         right:-150px;
+        opacity: 0;
       }
       &.fadeRight-enter-to, &.fadeRight-leave {
-        right: 30px;;
+        right: 30px;
       }
       &.fadeRight-enter-active, &.fadeRight-leave-active  {
-        transition: right .5s;
+        transition: all .5s;
       }
       > .header {
         display:flex;

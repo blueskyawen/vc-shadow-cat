@@ -54,8 +54,6 @@ export default {
     display: flex;
     align-items: center;
     box-shadow: 0 1px 6px #e6e6e6;
-    position: fixed;
-    z-index: 10;
     background: #fff;
     .app-icon {
       display: flex;
