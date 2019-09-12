@@ -46,6 +46,10 @@ export default new Router({
           component: () => import('./docs/element/input.md')
         },
         {
+          path: 'numInput',
+          component: () => import('./docs/element/num-input.md')
+        },
+        {
           path: 'info',
           component: () => import('./docs/element/info.md')
         },
