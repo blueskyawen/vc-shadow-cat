@@ -28,7 +28,7 @@
       <p>鼠标放置其上暂停播放，离开后继续</p>
       <div class="demoItem">
         <vc-carousel style="height: 450px;width: 65%;" :captions="options5" :auto-play="true" :pause="true"
-                     :circular-bead="'6px'" v-model="curIndex5"></vc-carousel>
+                     :effect="'slide'" :circular-bead="'6px'" v-model="curIndex5"></vc-carousel>
       </div>
     </div>
   </div>
