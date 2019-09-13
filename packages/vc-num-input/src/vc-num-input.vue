@@ -2,8 +2,8 @@
   <div class="vc-num-input" :class="numIputClass">
     <input :value="numValue" :disabled="disabled" @change="valueChange($event)" />
     <span class="input-opers">
-      <span class="input-oper oper-add" :class="{'disable': disableAdd}" @click="inputAdd"></span>
-      <span class="input-oper oper-del" :class="{'disable': disableDesc}" @click="inputDesc"></span>
+      <span class="input-oper oper-add" :class="{'disable': disabled || disableAdd}" @click="inputAdd"></span>
+      <span class="input-oper oper-del" :class="{'disable': disabled || disableDesc}" @click="inputDesc"></span>
     </span>
   </div>
 </template>
@@ -42,27 +42,100 @@ export default {
       numValue: '',
       inputReg: /^((\d)|([1-9]\d*))$/,
       disableAdd: false,
-      disableDesc: false
+      disableDesc: false,
+      curNum: 0
     }
   },
   created: function () {
     if (this.inputReg.test(this.value)) {
-      this.numValue = this.value.toString()
+      if (this.value < this.min || this.value > this.max) {
+        this.numValue = this.min.toString()
+      } else {
+        this.numValue = this.value.toString()
+      }
     } else {
       this.numValue = '0'
     }
+    this.disableAdd = this.disabled
+    this.disableDesc = this.disabled
   },
   computed: {
     numIputClass: function () {
       return { 'input-lg': this.size === 'large',
         'input-md': this.size === 'middle',
-        'input-sm': this.size === 'small' }
+        'input-sm': this.size === 'small',
+        'input-disable': this.disabled }
     }
   },
   methods: {
+    inputAdd: function () {
+      if (this.disableAdd) return
+      this.curNum = +this.numValue
+      if ((this.curNum + this.step) >= this.max) {
+        this.numValue = this.max.toString()
+        this.checkDisableDesc(false)
+        this.checkDisableAdd(true)
+      } else {
+        this.numValue = (this.curNum + this.step).toString()
+        this.checkDisableDesc(false)
+        this.checkDisableAdd(false)
+      }
+      this.$emit('input', +this.numValue)
+    },
+    inputDesc: function () {
+      if (this.disableDesc) return
+      this.curNum = +this.numValue
+      if ((this.step + this.min) >= this.curNum) {
+        this.numValue = this.min.toString()
+        this.checkDisableDesc(true)
+        this.checkDisableAdd(false)
+      } else {
+        this.numValue = (this.curNum - this.step).toString()
+        this.checkDisableDesc(false)
+        this.checkDisableAdd(false)
+      }
+      this.$emit('input', +this.numValue)
+    },
     valueChange: function ($event) {
-      console.log($event.target.value)
-      this.$emit('input', +$event.target.value)
+      if (!this.inputReg.test($event.target.value)) {
+        this.numValue = this.min.toString()
+        this.checkDisableDesc(true)
+        this.checkDisableAdd(false)
+        return this.$emit('input', +this.numValue)
+      }
+      this.curNum = +$event.target.value
+      if (this.curNum < this.min) {
+        this.numValue = this.min.toString()
+        this.checkDisableDesc(true)
+        this.checkDisableAdd(false)
+      } else if (this.curNum > this.max) {
+        this.numValue = this.max.toString()
+        this.checkDisableDesc(false)
+        this.checkDisableAdd(true)
+      } else {
+        this.numValue = $event.target.value
+        this.checkDisableDesc(false)
+        this.checkDisableAdd(false)
+      }
+      this.$emit('input', +this.numValue)
+    },
+    checkDisableAdd: function (flag) {
+      if (flag && !this.disableAdd) {
+        this.disableAdd = true
+        return
+      }
+      if (!flag && this.disableAdd) {
+        this.disableAdd = false
+      }
+    },
+    checkDisableDesc: function (flag) {
+      if (flag && !this.disableDesc) {
+        this.disableDesc = true
+        return
+      }
+      if (!flag && this.disableDesc) {
+        this.disableDesc = false
+      }
     }
   }
 }
@@ -90,6 +163,22 @@ export default {
       width:4px;
     }
   }
+  &.input-disable {
+    input {
+      cursor:not-allowed;
+      background: #e6e6e6;
+      opacity:0.5;
+      &:hover {
+        border-color:#999;
+      }
+    }
+    .input-opers {
+      cursor: not-allowed;
+      .input-oper:hover {
+        padding: 0 !important;
+      }
+    }
+  }
   input {
     height:100%;
     width:100%;
@@ -97,6 +186,8 @@ export default {
     border-radius:6px;
     padding:0;
     outline: none;
+    padding-left: 5px;
+    box-sizing: border-box;
     &:hover {
       border-color:#1aa3ff;
     }
@@ -110,6 +201,7 @@ export default {
     width:24px;
     position:absolute;
     right:0;
+    top: 0;
     opacity:0;
     transition:opacity .8s;
     .input-oper {
@@ -164,7 +256,7 @@ export default {
       &.disable {
         cursor:not-allowed;
         background: #e6e6e6;
-        opacity:0.6;
+        opacity:0.5;
       }
     }
     &:hover {
