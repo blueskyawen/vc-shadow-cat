@@ -1,17 +1,3 @@
-# 过滤器
-
-用于一些常见的文本格式化和数据的显示转化，可用在插值表达式和属性绑定表达式，类似于angular里的管道。
-本库封装了一些常见的过滤器方便使用，过滤器使用方式
-
-    {{ data | filter_name(...args) | filter_name2(...args) | ... }}
-
-## 示例
-
-:::demo
-```html
-<FilterVcDemo></FilterVcDemo>
-```
-```javascript
 <template>
   <div class="FilterVcDemo">
     <h4>vcLowercase：把文本转换成全小写形式</h4>
@@ -49,5 +35,16 @@ export default {
   }
 }
 </script>
-```
-:::
+
+<style scoped lang="less">
+.FilterVcDemo {
+  h4 {
+    color: #006666;
+  }
+  .demoItem {
+    padding: 10px 0;
+    font-size: 18px;
+    border-bottom: dotted 1px #999;
+  }
+}
+</style>

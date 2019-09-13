@@ -83,7 +83,7 @@ const vcJson = {
  */
 const vcDateFormat = {
   name: 'vcDateFormat',
-  func: function (value, format) {
+  func: function (value, format, lang) {
     if (!value) return ''
     if (value instanceof Date) {
       var dateP = {
@@ -95,11 +95,13 @@ const vcDateFormat = {
         minute: value.getMinutes(),
         second: value.getSeconds()
       }
-      var weekDay = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+      var weekDayEnL = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+      // var weekDayEnS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+      // var weekDayZh = ['周日', '周一', '周二', '周三', '周四', '周五', '周六']
       if (format) {
         return value.toString()
       } else {
-        return dateP.year + '/' + dateP.month + '/' + dateP.date + ' ' + weekDay[dateP.day] + ' ' +
+        return dateP.year + '/' + dateP.month + '/' + dateP.date + ' ' + weekDayEnL[dateP.day] + ' ' +
           dateP.hour + ':' + dateP.minute + ':' + dateP.second
       }
     } else {

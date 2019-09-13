@@ -54,6 +54,10 @@ export default new Router({
           component: () => import('./docs/element/info.md')
         },
         {
+          path: 'carousel',
+          component: () => import('./docs/element/carousel.md')
+        },
+        {
           path: '*',
           component: NotFound
         }

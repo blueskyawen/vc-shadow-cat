@@ -8,10 +8,12 @@ import vcMutilCheckbox from './vc-mutil-checkbox'
 import vcRadio from './vc-radio'
 import vcInfo from './vc-info'
 import vcNumInput from './vc-num-input'
+import vcCarousel from './vc-carousel'
 
 // 存储组件列表
 const components = [
-  vcSwitch, vcLoading, vcButton, vcCheckbox, vcMutilCheckbox, vcRadio, vcInfo, vcNumInput, ...vcForm
+  vcSwitch, vcLoading, vcButton, vcCheckbox, vcMutilCheckbox, vcRadio, vcInfo, vcNumInput,
+  vcCarousel, ...vcForm
 ]
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，则所有的组件都将被注册
@@ -47,5 +49,6 @@ export default {
   vcRadio,
   vcInfo,
   vcNumInput,
+  vcCarousel,
   ...vcForm
 }
