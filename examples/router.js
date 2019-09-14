@@ -66,6 +66,26 @@ export default new Router({
           component: () => import('./docs/element/tab.md')
         },
         {
+          path: 'pagination',
+          component: () => import('./docs/element/pagination.md')
+        },
+        {
+          path: 'rate',
+          component: () => import('./docs/element/rate.md')
+        },
+        {
+          path: 'collapse',
+          component: () => import('./docs/element/collapse.md')
+        },
+        {
+          path: 'select',
+          component: () => import('./docs/element/select.md')
+        },
+        {
+          path: 'mutilSelect',
+          component: () => import('./docs/element/mutilSelect.md')
+        },
+        {
           path: '*',
           component: NotFound
         }
