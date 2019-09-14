@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0b68e7"],{"1e52":function(e,n,t){"use strict";t.r(n);var c=function(){var e=this,n=e.$createElement;e._self._c;return e._m(0)},l=[function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("section",[t("h1",[e._v("多项下拉选择器")]),t("p",[e._v("mutil-select选择器，弹出一个下拉菜单给用户选择操作，用于代替原生的选择器，每次可选择多个项目")])])}],u=t("2877"),r={},s=Object(u["a"])(r,c,l,!1,null,null,null);n["default"]=s.exports}}]);
+//# sourceMappingURL=chunk-2d0b68e7.16d3572c.js.map

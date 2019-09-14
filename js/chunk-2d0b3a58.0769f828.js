@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0b3a58"],{"28ea":function(e,n,t){"use strict";t.r(n);var c=function(){var e=this,n=e.$createElement;e._self._c;return e._m(0)},a=[function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("section",[t("h1",[e._v("选项卡")]),t("p",[e._v("Tab选项卡，用于在不同视图框中根据选择来呈现不同的内容")])])}],r=t("2877"),u={},l=Object(r["a"])(u,c,a,!1,null,null,null);n["default"]=l.exports}}]);
+//# sourceMappingURL=chunk-2d0b3a58.0769f828.js.map
