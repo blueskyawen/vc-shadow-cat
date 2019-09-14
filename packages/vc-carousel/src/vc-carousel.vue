@@ -326,12 +326,12 @@ export default {
 }
 @media (max-width: 767px) {
   .vc-carousel {
-    height:250px;
+    height:240px;
   }
 }
 @media (min-width: 768px) {
   .vc-carousel {
-    height:450px;
+    height:420px;
   }
 }
 @media (min-width: 992px) {

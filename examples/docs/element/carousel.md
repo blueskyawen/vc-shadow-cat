@@ -132,12 +132,12 @@ export default {
   <div class="CarouselVcDemo">
       <p>打开自动播放和间隔时间设置</p>
       <div class="demoItem">
-        <vc-carousel style="height: 450px;width: 60%;" :captions="options" :auto-play="true" :timerlen="8000"
+        <vc-carousel style="width: 90%;" :captions="options" :auto-play="true" :timerlen="8000"
                      :circular-bead="'6px'" v-model="curIndex"></vc-carousel>
       </div>
       <p>鼠标放置其上暂停播放，离开后继续</p>
       <div class="demoItem">
-        <vc-carousel style="height: 450px;width: 60%;" :captions="options" :auto-play="true" :pause="true"
+        <vc-carousel style="width: 90%;" :captions="options" :auto-play="true" :pause="true"
                      :circular-bead="'6px'" v-model="curIndex2"></vc-carousel>
       </div>
   </div>

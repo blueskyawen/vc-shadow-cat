@@ -22,12 +22,12 @@ export default {
   data () {
     return {
       menuOptions: [
-        { label: '过滤器', name: 'filter', routeLink: 'filter' },
-        { label: '珊格系统', name: 'cols', routeLink: 'cols' },
-        { label: '列表组', name: 'listGroup', routeLink: 'listGroup' },
-        { label: '表单', name: 'form', routeLink: 'form' },
-        { label: '表单实例', name: 'formDemo', routeLink: 'formDemo' },
-        { label: '照片浏览', name: 'photoView', routeLink: 'photoView' }
+        { label: '过滤器', name: 'filter', routeLink: 'filter' }
+        // { label: '珊格', name: 'cols', routeLink: 'cols' },
+        // { label: '列表组', name: 'listGroup', routeLink: 'listGroup' },
+        // { label: '表单', name: 'form', routeLink: 'form' },
+        // { label: '表单实例', name: 'formDemo', routeLink: 'formDemo' }
+        // { label: '照片浏览', name: 'photoView', routeLink: 'photoView' }
       ]
     }
   },

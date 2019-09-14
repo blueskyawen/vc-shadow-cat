@@ -22,12 +22,12 @@
     <div v-if="type === 'auto'">
       <p>打开自动播放和间隔时间设置</p>
       <div class="demoItem">
-        <vc-carousel style="height: 450px;width: 65%;" :captions="options4" :auto-play="true" :timerlen="8000"
+        <vc-carousel style="width: 90%;" :captions="options4" :auto-play="true" :timerlen="8000"
                      :circular-bead="'6px'" v-model="curIndex4"></vc-carousel>
       </div>
       <p>鼠标放置其上暂停播放，离开后继续</p>
       <div class="demoItem">
-        <vc-carousel style="height: 450px;width: 65%;" :captions="options5" :auto-play="true" :pause="true"
+        <vc-carousel style="width: 90%;" :captions="options5" :auto-play="true" :pause="true"
                      :effect="'slide'" :circular-bead="'6px'" v-model="curIndex5"></vc-carousel>
       </div>
     </div>
