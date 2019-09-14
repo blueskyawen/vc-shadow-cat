@@ -34,6 +34,11 @@ export default {
     return {
     }
   },
+  created: function () {
+    if (screen.availWidth < 768) {
+      this.$store.commit('toggleSideBar')
+    }
+  },
   methods: {
     changeExtend: function () {
       this.$store.commit('toggleSideBar')
