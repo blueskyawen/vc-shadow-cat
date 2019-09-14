@@ -33,7 +33,6 @@ export default {
         { label: '轮播', name: 'carousel', routeLink: 'carousel' },
         { label: '选项卡', name: 'tab', routeLink: 'tab' },
         { label: '提示工具', name: 'toolTip', routeLink: 'toolTip' },
-        { label: '帮助', name: 'helpInfo', routeLink: 'helpInfo' },
         { label: '分页条', name: 'pagination', routeLink: 'pagination' },
         { label: '评分条', name: 'rate', routeLink: 'rate' },
         { label: '折叠面板', name: 'collapse', routeLink: 'collapse' },

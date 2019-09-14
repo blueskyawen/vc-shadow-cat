@@ -58,6 +58,14 @@ export default new Router({
           component: () => import('./docs/element/carousel.md')
         },
         {
+          path: 'toolTip',
+          component: () => import('./docs/element/tooltip.md')
+        },
+        {
+          path: 'tab',
+          component: () => import('./docs/element/tab.md')
+        },
+        {
           path: '*',
           component: NotFound
         }
