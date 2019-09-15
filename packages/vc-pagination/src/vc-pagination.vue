@@ -149,6 +149,9 @@ export default {
           border-radius:0 4px 4px 0;
         }
       }
+      &:not(:last-child) {
+        border-right: none;
+      }
       &.active {
         a {
           background-color: #1a75ff;

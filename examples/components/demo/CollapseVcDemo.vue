@@ -1,16 +1,6 @@
-# 折叠面板
-
-可以折叠/展开的内容区域，常用于折叠显示一些文档或表单输入
-
-## 基本样式
-
-:::demo
-```html
-<CollapseVcDemo :type="'basic'"></CollapseVcDemo>
-```
-```javascript
 <template>
   <div class="CollapseVcDemo">
+    <div v-if="type === 'basic'">
       <vc-collapse>
         <vc-panel v-for="(option, index) in options" :key="index" :header-title="option.header" v-model="option.active">
           <p v-if="index === 0">杨过，名过，字改之，是金庸武侠小说《神雕侠侣》[1]  中的主人公，前作《射雕英雄传》中杨康与穆念慈之子，西毒欧阳锋的义子。
@@ -21,37 +11,10 @@
             对其妻冯氏（小字阿衡）一往情深。</p>
         </vc-panel>
       </vc-collapse>
-  </div>
-</template>
-
-<script>
-export default {
-    name: 'CollapseVcDemo',
-    data () {
-      return {
-          options: [
-            { header: '杨过', active: false, disable: false },
-            { header: '小龙女', active: false, disable: false },
-            { header: '黄药师', active: false, disable: false }
-          ]
-      }
-    }
-}
-</script>
-```
-:::
-
-## 定义默认展开和禁止
-
-:::demo
-```html
-<CollapseVcDemo :type="'advance'"></CollapseVcDemo>
-```
-```javascript
-<template>
-  <div class="CollapseVcDemo">
+    </div>
+    <div v-if="type === 'advance'">
       <vc-collapse>
-        <vc-panel v-for="(option, index) in options" :key="index" :header-title="option.header"
+        <vc-panel v-for="(option, index) in options2" :key="index" :header-title="option.header"
                   :disable="option.disable" v-model="option.active">
           <p v-if="index === 0">杨过，名过，字改之，是金庸武侠小说《神雕侠侣》[1]  中的主人公，前作《射雕英雄传》中杨康与穆念慈之子，西毒欧阳锋的义子。
             名字为郭靖、黄蓉所取，取“有过则改之”之意。</p>
@@ -61,37 +24,10 @@ export default {
             对其妻冯氏（小字阿衡）一往情深。</p>
         </vc-panel>
       </vc-collapse>
-  </div>
-</template>
-
-<script>
-export default {
-  name: 'CollapseVcDemo',
-  data () {
-    return {
-      options: [
-        { header: '杨过', active: false, disable: false },
-        { header: '小龙女', active: false, disable: false },
-        { header: '黄药师', active: false, disable: false }
-      ]
-    }
-  }
-}
-</script>
-```
-:::
-
-## 自定义宽度和行为
-
-:::demo
-```html
-<CollapseVcDemo :type="'manual'"></CollapseVcDemo>
-```
-```javascript
-<template>
-  <div class="CollapseVcDemo">
+    </div>
+    <div v-if="type === 'manual'">
       <vc-collapse style="width: 100%;">
-        <vc-panel v-for="(option, index) in options" :key="index" :header-title="option.header"
+        <vc-panel v-for="(option, index) in options3" :key="index" :header-title="option.header"
                   v-model="option.active" @change="panelChange(option)">
           <p v-if="index === 0">杨过，名过，字改之，是金庸武侠小说《神雕侠侣》[1]  中的主人公，前作《射雕英雄传》中杨康与穆念慈之子，西毒欧阳锋的义子。
             名字为郭靖、黄蓉所取，取“有过则改之”之意。</p>
@@ -101,39 +37,49 @@ export default {
             对其妻冯氏（小字阿衡）一往情深。</p>
         </vc-panel>
       </vc-collapse>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-    name: 'CollapseVcDemo',
-    data () {
+  name: 'CollapseVcDemo',
+  props: {
+    type: String
+  },
+  data () {
     return {
       options: [
         { header: '杨过', active: false, disable: false },
         { header: '小龙女', active: false, disable: false },
         { header: '黄药师', active: false, disable: false }
+      ],
+      options2: [
+        { header: '杨过', active: false, disable: false },
+        { header: '小龙女', active: false, disable: true },
+        { header: '黄药师', active: false, disable: false }
+      ],
+      options3: [
+        { header: '杨过', active: false, disable: false },
+        { header: '小龙女', active: false, disable: false },
+        { header: '黄药师', active: false, disable: false }
       ]
     }
-    },
-    methods: {
-      panelChange: function (option) {
-        this.options.forEach(item => {
-          if (item.header !== option.header) {
-            item.active = false
-          }
-        })
-      }
+  },
+  methods: {
+    panelChange: function (option) {
+      this.options3.forEach(item => {
+        if (item.header !== option.header) {
+          item.active = false
+        }
+      })
     }
+  }
 }
 </script>
-```
-:::
 
-## 属性参数(vc-panel)
-
-| 参数 | 说明 |	类型 |	可选值 |	默认值 |
-|---|---|---|---|---|
-| headerTitle | 标题 | string | 无 | header |
-| disable | 禁用 | boolean | true,false | false |
-| active | 激活 | boolean | true,false | false |
+<style scoped lang="less">
+.CollapseVcDemo {
+  width: 100%;
+}
+</style>
