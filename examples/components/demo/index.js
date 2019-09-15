@@ -13,6 +13,7 @@ import TabVcDemo from './TabVcDemo'
 import PaginationVcDemo from './PaginationVcDemo'
 import RateVcDemo from './RateVcDemo'
 import CollapseVcDemo from './CollapseVcDemo'
+import SelectVcDemo from './SelectVcDemo'
 
 Vue.component('DemoBlock', DemoBlock)
 Vue.component('SwitchVcDemo', SwitchVcDemo)
@@ -28,3 +29,4 @@ Vue.component('TabVcDemo', TabVcDemo)
 Vue.component('PaginationVcDemo', PaginationVcDemo)
 Vue.component('RateVcDemo', RateVcDemo)
 Vue.component('CollapseVcDemo', CollapseVcDemo)
+Vue.component('SelectVcDemo', SelectVcDemo)

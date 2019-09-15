@@ -1,14 +1,3 @@
-# 单项下拉选择器
-
-select选择器，弹出一个下拉菜单给用户选择操作，用于代替原生的选择器，每次只选择一个项目
-
-## 使用示例
-
-:::demo
-```html
-<SelectVcDemo></SelectVcDemo>
-```
-```javascript
 <template>
   <div class="SelectVcDemo">
     <h4>基本样式</h4>
@@ -64,13 +53,18 @@ export default {
   }
 }
 </script>
-```
-:::
 
-## 属性参数
-
-| 参数 | 说明 |	类型 |	可选值 |	默认值 |
-|---|---|---|---|---|
-| options | 选项列表 | array | 无 | [] |
-| disabled | 禁用 | boolean | true,false | false |
-| value | 当前选择值 | string | 无 | '' |
+<style scoped lang="less">
+.SelectVcDemo {
+  h4 {
+    color: #006666;
+  }
+  .demoItem {
+    padding: 10px 0;
+    border-bottom: dotted 1px #999;
+    .demoText {
+      margin: 15px 10px 5px;
+    }
+  }
+}
+</style>
