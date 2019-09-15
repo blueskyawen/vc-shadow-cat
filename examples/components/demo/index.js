@@ -10,6 +10,7 @@ import CarouselVcDemo from './CarouselVcDemo'
 import FilterVcDemo from './FilterVcDemo'
 import TooltipVcDemo from './TooltipVcDemo'
 import TabVcDemo from './TabVcDemo'
+import PaginationVcDemo from './PaginationVcDemo'
 
 Vue.component('DemoBlock', DemoBlock)
 Vue.component('SwitchVcDemo', SwitchVcDemo)
@@ -22,3 +23,4 @@ Vue.component('CarouselVcDemo', CarouselVcDemo)
 Vue.component('FilterVcDemo', FilterVcDemo)
 Vue.component('TooltipVcDemo', TooltipVcDemo)
 Vue.component('TabVcDemo', TabVcDemo)
+Vue.component('PaginationVcDemo', PaginationVcDemo)

@@ -1,14 +1,3 @@
-# 分页条
-
-一种无序列表，常用于项目或表格分页
-
-## 使用示例
-
-:::demo
-```html
-<PaginationVcDemo></PaginationVcDemo>
-```
-```javascript
 <template>
   <div class="PaginationVcDemo">
     <h4>默认样式</h4>
@@ -16,10 +5,11 @@
       <vc-pagination></vc-pagination>
     </div>
     <div class="demoItem">
-      <vc-pagination :appear-num="8"></vc-pagination>
+      <vc-pagination :appear-num="6"></vc-pagination>
     </div>
     <div class="demoItem">
       <vc-pagination :appear-num="10" :page-num="20" v-model="curPage1"></vc-pagination>
+      <p class="demoText">curPage1: {{curPage1}}</p>
     </div>
     <div class="demoItem">
       <vc-pagination></vc-pagination>
@@ -29,10 +19,11 @@
       <vc-pagination :have-border="true"></vc-pagination>
     </div>
     <div class="demoItem">
-      <vc-pagination :have-border="true" :appear-num="8"></vc-pagination>
+      <vc-pagination :have-border="true" :appear-num="6"></vc-pagination>
     </div>
     <div class="demoItem">
       <vc-pagination :have-border="true" :appear-num="10" :page-num="30" v-model="curPage2"></vc-pagination>
+      <p class="demoText">curPage2: {{curPage2}}</p>
     </div>
   </div>
 </template>
@@ -40,6 +31,9 @@
 <script>
 export default {
   name: 'PaginationVcDemo',
+  props: {
+    type: String
+  },
   data () {
     return {
       curPage1: 6,
@@ -48,14 +42,18 @@ export default {
   }
 }
 </script>
-```
-:::
 
-## 属性参数
-
-| 参数 | 说明 |	类型 |	可选值 |	默认值 |
-|---|---|---|---|---|
-| haveBorder | 带边框 | boolean | true,false | false |
-| pageNum | 总页数 | number | 无 | 10 |
-| appearNum | 可见页数 | number | 无 | 6 |
-| curPage | 当前选中值 | number | 无 | 1 |
+<style scoped lang="less">
+.PaginationVcDemo {
+  h4 {
+    color: #006666;
+  }
+  .demoItem {
+    padding: 10px 0;
+    border-bottom: dotted 1px #999;
+    .demoText {
+      margin: 15px 10px 5px;
+    }
+  }
+}
+</style>
