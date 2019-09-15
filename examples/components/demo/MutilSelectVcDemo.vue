@@ -1,16 +1,6 @@
-# 多项下拉选择器
-
-mutil-select选择器，弹出一个下拉菜单给用户选择操作，用于代替原生的选择器，每次可选择多个项目
-
-## 基本样式
-
-:::demo
-```html
-<MutilSelectVcDemo :type="'basic'"></MutilSelectVcDemo>
-```
-```javascript
 <template>
   <div class="MutilSelectVcDemo">
+    <div v-if="type === 'basic'">
       <h4>正常状态</h4>
       <div class="demoItem">
         <vc-mutil-select :options="options" v-model="selectedItems"></vc-mutil-select>
@@ -25,12 +15,46 @@ mutil-select选择器，弹出一个下拉菜单给用户选择操作，用于�
         <vc-mutil-select :options="options2" v-model="selectedItems2"></vc-mutil-select>
         <p class="demoText">已选项：{{selectedItems2}}</p>
       </div>
+    </div>
+    <div v-if="type === 'checkbox'">
+      <h4>正常复选框</h4>
+      <div class="demoItem">
+        <vc-mutil-select :options="options3" :has-checkbox="true" v-model="selectedItems3"></vc-mutil-select>
+        <p class="demoText">已选项：{{selectedItems3}}</p>
+      </div>
+      <h4>带全选</h4>
+      <div class="demoItem">
+        <vc-mutil-select :options="options4" :has-checkbox="true" :all-check="true"
+                         v-model="selectedItems4"></vc-mutil-select>
+        <p class="demoText">已选项：{{selectedItems4}}</p>
+      </div>
+    </div>
+    <div v-if="type === 'num'">
+      <div class="demoItem">
+        <vc-mutil-select :options="options5" :show-check-num="true" v-model="selectedItems5"></vc-mutil-select>
+      </div>
+      <div class="demoItem">
+        <vc-mutil-select :options="options6" :has-checkbox="true" :show-check-num="true"
+                         v-model="selectedItems6"></vc-mutil-select>
+      </div>
+    </div>
+    <div v-if="type === 'manual'">
+      <div class="demoItem">
+        <vc-mutil-select style="width: 300px" :options="options7" v-model="selectedItems7"></vc-mutil-select>
+      </div>
+      <div class="demoItem">
+        <vc-mutil-select style="width: 540px" :options="options7" v-model="selectedItems7"></vc-mutil-select>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'MutilSelectVcDemo',
+  props: {
+    type: String
+  },
   data () {
     return {
       options: [
@@ -52,167 +76,73 @@ export default {
         { label: 'Saas', value: 'saas', disable: false },
         { label: 'NG-ANT', value: 'ng-ant', disable: false }
       ],
-      selectedItems2: ['iaas', 'saas']
+      selectedItems2: ['iaas', 'saas'],
+      options3: [
+        { label: 'paletxUI-paletxUI-paletxUI-paletxUI-paletxUI-paletxUI-paletxUI-paletxUI',
+          value: 'paletxui',
+          disable: false },
+        { label: 'Iaas', value: 'iaas', disable: false },
+        { label: 'Paas', value: 'paas', disable: false },
+        { label: 'Saas', value: 'saas', disable: false },
+        { label: 'NG-ANT', value: 'ng-ant', disable: false }
+      ],
+      selectedItems3: ['iaas', 'saas'],
+      options4: [
+        { label: 'paletxUI-paletxUI-paletxUI-paletxUI-paletxUI-paletxUI-paletxUI-paletxUI',
+          value: 'paletxui',
+          disable: false },
+        { label: 'Iaas', value: 'iaas', disable: false },
+        { label: 'Paas', value: 'paas', disable: false },
+        { label: 'Saas', value: 'saas', disable: false },
+        { label: 'NG-ANT', value: 'ng-ant', disable: false }
+      ],
+      selectedItems4: ['iaas', 'saas'],
+      options5: [
+        { label: 'paletxUI-paletxUI-paletxUI-paletxUI-paletxUI-paletxUI-paletxUI-paletxUI',
+          value: 'paletxui',
+          disable: false },
+        { label: 'Iaas', value: 'iaas', disable: false },
+        { label: 'Paas', value: 'paas', disable: false },
+        { label: 'Saas', value: 'saas', disable: false },
+        { label: 'NG-ANT', value: 'ng-ant', disable: false }
+      ],
+      selectedItems5: ['iaas', 'saas'],
+      options6: [
+        { label: 'paletxUI-paletxUI-paletxUI-paletxUI-paletxUI-paletxUI-paletxUI-paletxUI',
+          value: 'paletxui',
+          disable: false },
+        { label: 'Iaas', value: 'iaas', disable: false },
+        { label: 'Paas', value: 'paas', disable: false },
+        { label: 'Saas', value: 'saas', disable: false },
+        { label: 'NG-ANT', value: 'ng-ant', disable: false }
+      ],
+      selectedItems6: ['iaas', 'saas'],
+      options7: [
+        { label: 'paletxUI-paletxUI-paletxUI-paletxUI-paletxUI-paletxUI-paletxUI-paletxUI',
+          value: 'paletxui',
+          disable: false },
+        { label: 'Iaas', value: 'iaas', disable: false },
+        { label: 'Paas', value: 'paas', disable: false },
+        { label: 'Saas', value: 'saas', disable: false },
+        { label: 'NG-ANT', value: 'ng-ant', disable: false }
+      ],
+      selectedItems7: ['iaas', 'saas']
     }
   }
 }
 </script>
-```
-:::
 
-## 复选框样式
-
-:::demo
-```html
-<MutilSelectVcDemo :type="'checkbox'"></MutilSelectVcDemo>
-```
-```javascript
-<template>
-  <div class="MutilSelectVcDemo">
-      <h4>正常复选框</h4>
-      <div class="demoItem">
-        <vc-mutil-select :options="options" :has-checkbox="true" v-model="selectedItems"></vc-mutil-select>
-        <p class="demoText">已选项：{{selectedItems}}</p>
-      </div>
-      <h4>带全选</h4>
-      <div class="demoItem">
-        <vc-mutil-select :options="options2" :has-checkbox="true" :all-check="true"
-                         v-model="selectedItems2"></vc-mutil-select>
-        <p class="demoText">已选项：{{selectedItems2}}</p>
-      </div>
-  </div>
-</template>
-
-<script>
-export default {
-  name: 'MutilSelectVcDemo',
-  data () {
-    return {
-      options: [
-        { label: 'paletxUI-paletxUI-paletxUI-paletxUI-paletxUI-paletxUI-paletxUI-paletxUI',
-          value: 'paletxui',
-          disable: false },
-        { label: 'Iaas', value: 'iaas', disable: false },
-        { label: 'Paas', value: 'paas', disable: false },
-        { label: 'Saas', value: 'saas', disable: false },
-        { label: 'NG-ANT', value: 'ng-ant', disable: false }
-      ],
-      selectedItems: ['iaas', 'saas'],
-      options2: [
-        { label: 'paletxUI-paletxUI-paletxUI-paletxUI-paletxUI-paletxUI-paletxUI-paletxUI',
-          value: 'paletxui',
-          disable: false },
-        { label: 'Iaas', value: 'iaas', disable: false },
-        { label: 'Paas', value: 'paas', disable: false },
-        { label: 'Saas', value: 'saas', disable: false },
-        { label: 'NG-ANT', value: 'ng-ant', disable: false }
-      ],
-      selectedItems2: ['iaas', 'saas']
+<style scoped lang="less">
+.MutilSelectVcDemo {
+  h4 {
+    color: #006666;
+  }
+  .demoItem {
+    padding: 10px 0;
+    border-bottom: dotted 1px #999;
+    .demoText {
+      margin: 15px 10px 5px;
     }
   }
 }
-</script>
-```
-:::
-
-## 仅显示选择个数
-
-:::demo
-```html
-<MutilSelectVcDemo :type="'num'"></MutilSelectVcDemo>
-```
-```javascript
-<template>
-  <div class="MutilSelectVcDemo">
-      <div class="demoItem">
-        <vc-mutil-select :options="options" :show-check-num="true" v-model="selectedItems"></vc-mutil-select>
-      </div>
-      <div class="demoItem">
-        <vc-mutil-select :options="options2" :has-checkbox="true" :show-check-num="true"
-                         v-model="selectedItems2"></vc-mutil-select>
-      </div>
-  </div>
-</template>
-
-<script>
-export default {
-  name: 'MutilSelectVcDemo',
-  data () {
-    return {
-      options: [
-        { label: 'paletxUI-paletxUI-paletxUI-paletxUI-paletxUI-paletxUI-paletxUI-paletxUI',
-          value: 'paletxui',
-          disable: false },
-        { label: 'Iaas', value: 'iaas', disable: false },
-        { label: 'Paas', value: 'paas', disable: false },
-        { label: 'Saas', value: 'saas', disable: false },
-        { label: 'NG-ANT', value: 'ng-ant', disable: false }
-      ],
-      selectedItems: ['iaas', 'saas'],
-      options2: [
-        { label: 'paletxUI-paletxUI-paletxUI-paletxUI-paletxUI-paletxUI-paletxUI-paletxUI',
-          value: 'paletxui',
-          disable: false },
-        { label: 'Iaas', value: 'iaas', disable: false },
-        { label: 'Paas', value: 'paas', disable: false },
-        { label: 'Saas', value: 'saas', disable: false },
-        { label: 'NG-ANT', value: 'ng-ant', disable: false }
-      ],
-      selectedItems2: ['iaas', 'saas']
-    }
-  }
-}
-</script>
-```
-:::
-
-## 自定义尺寸宽度
-
-:::demo
-```html
-<MutilSelectVcDemo :type="'manual'"></MutilSelectVcDemo>
-```
-```javascript
-<template>
-  <div class="MutilSelectVcDemo">
-      <div class="demoItem">
-        <vc-mutil-select style="width: 300px" :options="options" v-model="selectedItems"></vc-mutil-select>
-      </div>
-      <div class="demoItem">
-        <vc-mutil-select style="width: 600px" :options="options" v-model="selectedItems"></vc-mutil-select>
-      </div>
-  </div>
-</template>
-
-<script>
-export default {
-  name: 'MutilSelectVcDemo',
-  data () {
-    return {
-      options: [
-        { label: 'paletxUI-paletxUI-paletxUI-paletxUI-paletxUI-paletxUI-paletxUI-paletxUI',
-          value: 'paletxui',
-          disable: false },
-        { label: 'Iaas', value: 'iaas', disable: false },
-        { label: 'Paas', value: 'paas', disable: false },
-        { label: 'Saas', value: 'saas', disable: false },
-        { label: 'NG-ANT', value: 'ng-ant', disable: false }
-      ],
-      selectedItems: ['iaas', 'saas']
-    }
-  }
-}
-</script>
-```
-:::
-
-## 属性参数
-
-| 参数 | 说明 |	类型 |	可选值 |	默认值 |
-|---|---|---|---|---|
-| options | 选项列表 | array | 无 | [] |
-| selection | 已选择值列表 | array | 无 | [] |
-| disabled | 禁用 | boolean | true,false | false |
-| hasCheckbox | 复选框样式 | boolean | true,false | false |
-| allCheck | 带全选 | boolean | true,false | false |
-| showCheckNum | 仅显示选择数目 | boolean | true,false | false |
+</style>

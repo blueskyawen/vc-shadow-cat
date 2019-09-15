@@ -37,22 +37,21 @@ export default {
         { label: '折叠面板', name: 'collapse', routeLink: 'collapse' },
         { label: '提示工具', name: 'toolTip', routeLink: 'toolTip' },
         { label: '单项选择器', name: 'select', routeLink: 'select' },
-        { label: '多项选择器', name: 'mutilSelect', routeLink: 'mutilSelect' }
-        /* { label: '滑动输入', name: 'rangeslide', routeLink: 'rangeslide' },
+        { label: '多项选择器', name: 'mutilSelect', routeLink: 'mutilSelect' },
+        { label: '滑动输入', name: 'rangeslide', routeLink: 'rangeslide' },
         { label: '进度条', name: 'progress', routeLink: 'progress' },
-        { label: '比例条', name: 'proportion', routeLink: 'proportion' },
         { label: '模态框', name: 'dialog', routeLink: 'dialog' },
         { label: '穿梭选择框', name: 'transfer', routeLink: 'transfer' },
         { label: '柱状图', name: 'barChart', routeLink: 'barChart' },
         { label: '饼环状图', name: 'pieChart', routeLink: 'pieChart' },
         { label: '抽屉', name: 'drawer', routeLink: 'drawer' },
-        { label: '标签', name: 'label', routeLink: 'label' },
         { label: '可拖拽区间', name: 'resizeArea', routeLink: 'resizeArea' },
         { label: '头像', name: 'avater', routeLink: 'avater' },
         { label: '徽章', name: 'badge', routeLink: 'badge' },
         { label: '消息表情', name: 'msgEif', routeLink: 'msgEif' },
-        { label: '加载占位', name: 'skeleton', routeLink: 'skeleton' },
-        { label: '翻页条', name: 'pager', routeLink: 'pager' },
+        { label: '加载占位', name: 'skeleton', routeLink: 'skeleton' }
+        /* { label: '标签', name: 'label', routeLink: 'label' },
+        { label: '穿梭选择框', name: 'transfer', routeLink: 'transfer' },
         { label: '日期时间选择器', name: 'dateTimeSelector', routeLink: 'dateTimeSelector' } */
       ]
     }

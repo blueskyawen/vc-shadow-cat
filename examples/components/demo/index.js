@@ -14,6 +14,7 @@ import PaginationVcDemo from './PaginationVcDemo'
 import RateVcDemo from './RateVcDemo'
 import CollapseVcDemo from './CollapseVcDemo'
 import SelectVcDemo from './SelectVcDemo'
+import MutilSelectVcDemo from './MutilSelectVcDemo'
 
 Vue.component('DemoBlock', DemoBlock)
 Vue.component('SwitchVcDemo', SwitchVcDemo)
@@ -30,3 +31,4 @@ Vue.component('PaginationVcDemo', PaginationVcDemo)
 Vue.component('RateVcDemo', RateVcDemo)
 Vue.component('CollapseVcDemo', CollapseVcDemo)
 Vue.component('SelectVcDemo', SelectVcDemo)
+Vue.component('MutilSelectVcDemo', MutilSelectVcDemo)
