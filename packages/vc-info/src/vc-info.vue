@@ -3,7 +3,9 @@
     <transition name="fadeTop">
       <div v-if="showTopInfo" class="top-info" :class="infoClass" :style="topInfoStyle">
         <div :class="{'msg': type !== 'success'}"><slot></slot></div>
-        <div v-if="type !== 'success'" class="oper-cancel"><span @click="cancel">x</span></div>
+        <div v-if="type !== 'success'" class="oper-cancel" @click="cancel">
+         <svg viewBox="64 64 896 896" data-icon="close" width="14px" height="14px" fill="currentColor" aria-hidden="true"><path d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 0 0 203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"></path></svg>
+        </div>
       </div>
     </transition>
 
@@ -14,8 +16,16 @@
         </div>
         <div class="acticle">
           <div class="gradetitle">
-            <span class="icon" :class="infoClasszz">{{iconType}}</span>
-            <span class="title">{{headerTitle}}</span>
+             <span class="icon icon-green" v-if="type === 'success'">
+              <svg viewBox="64 64 896 896" fill="currentColor" width="14px" height="14px" data-icon="check" aria-hidden="true"><path d="M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 0 0-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z"></path></svg>
+             </span>
+             <span class="icon icon-yellow" v-if="type === 'warn'">
+              !
+             </span>
+             <span class="icon icon-red" v-if="type === 'error'">
+               <svg viewBox="64 64 896 896" data-icon="close" width="14px" height="14px" fill="currentColor" aria-hidden="true"><path d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 0 0 203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"></path></svg>
+             </span>
+             <span class="title">{{headerTitle}}</span>
           </div>
           <div class="content">
             <slot name="content"></slot>
@@ -66,20 +76,12 @@ export default {
       default: '10px'
     }
   },
-  data () {
-    return {
-      iconType: '√'
-    }
-  },
   updated: function () {
     if (this.show && this.type === 'success') {
       setTimeout(() => {
         this.cancel()
       }, this.timerLen)
     }
-  },
-  created: function () {
-    this.iconType = this.type === 'success' ? '√' : this.type === 'warn' ? '!' : '×'
   },
   computed: {
     infoClass: function () {
@@ -139,9 +141,15 @@ export default {
       }
       &.warn {
         background:#ff9933;
+        .oper-cancel:hover {
+          background: #e67300;
+        }
       }
       &.error{
         background:#cc0000;
+        .oper-cancel:hover {
+          background: #990000;
+        }
       }
       .msg {
         height:100%;
@@ -149,22 +157,16 @@ export default {
         flex:1 1 auto;
       }
       .oper-cancel {
-        width:100%;
-        flex:0 0 45px;
-        display:flex;
+        width:22px;
+        height: 22px;
+        border: solid 1px transparent;
+        border-radius: 100%;
+        display:inline-flex;
         justify-content:center;
         align-items:center;
-        span {
-          height:50%;
-          width:50%;
-          line-height:22.5px;
-          text-align:center;
-          border-radius:50%;
-          font-size:14px;
-          &:hover{
-            background: #999999;
-            cursor:pointer;
-          }
+        margin-right: 10px;
+        &:hover {
+          cursor:pointer;
         }
       }
     }
@@ -219,13 +221,15 @@ export default {
         .gradetitle {
           width:100%;
           .icon {
-            display:inline-block;
+            display:inline-flex;
             height:20px;
             width:20px;
             line-height:20px;
-            text-align:center;
+            justify-content: center;
+            align-items: center;
             border-radius:50%;
             background:#fff;
+            font-size: 14px;
             &.icon-green {
               border:solid 1px #009900;
               color:#009900;
