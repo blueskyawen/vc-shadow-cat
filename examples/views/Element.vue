@@ -38,7 +38,7 @@ export default {
         { label: '提示工具', name: 'toolTip', routeLink: 'toolTip' },
         { label: '单项选择器', name: 'select', routeLink: 'select' },
         { label: '多项选择器', name: 'mutilSelect', routeLink: 'mutilSelect' },
-        { label: '滑动输入', name: 'rangeslide', routeLink: 'rangeslide' },
+        { label: '滑动输入', name: 'slider', routeLink: 'slider' },
         { label: '进度条', name: 'progress', routeLink: 'progress' },
         { label: '模态框', name: 'dialog', routeLink: 'dialog' },
         { label: '穿梭选择框', name: 'transfer', routeLink: 'transfer' },

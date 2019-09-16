@@ -15,6 +15,7 @@ import RateVcDemo from './RateVcDemo'
 import CollapseVcDemo from './CollapseVcDemo'
 import SelectVcDemo from './SelectVcDemo'
 import MutilSelectVcDemo from './MutilSelectVcDemo'
+import SliderVcDemo from './SliderVcDemo'
 
 Vue.component('DemoBlock', DemoBlock)
 Vue.component('SwitchVcDemo', SwitchVcDemo)
@@ -32,3 +33,4 @@ Vue.component('RateVcDemo', RateVcDemo)
 Vue.component('CollapseVcDemo', CollapseVcDemo)
 Vue.component('SelectVcDemo', SelectVcDemo)
 Vue.component('MutilSelectVcDemo', MutilSelectVcDemo)
+Vue.component('SliderVcDemo', SliderVcDemo)

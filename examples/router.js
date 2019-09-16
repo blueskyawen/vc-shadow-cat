@@ -86,6 +86,10 @@ export default new Router({
           component: () => import('./docs/element/mutilSelect.md')
         },
         {
+          path: 'slider',
+          component: () => import('./docs/element/slider.md')
+        },
+        {
           path: '*',
           component: NotFound
         }
