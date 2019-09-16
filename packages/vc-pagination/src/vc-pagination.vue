@@ -32,7 +32,7 @@ export default {
     },
     appearNum: {
       type: Number,
-      default: 6
+      default: 5
     },
     curPage: {
       type: Number,
@@ -150,7 +150,9 @@ export default {
         }
       }
       &:not(:last-child) {
-        border-right: none;
+        a {
+          border-right: none;
+        }
       }
       &.active {
         a {

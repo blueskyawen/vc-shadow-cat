@@ -6,8 +6,8 @@
            :class="{'active': rateItem.checked,'mousehover': rateItem.hovered,'unmousehover': rateItem.unhovered}"
            :style="rateStyle">
       </div>
+      <div class="rate-description" v-if="showTitle">{{curRate}} {{text}}</div>
     </div>
-    <div class="rate-description" v-if="showTitle">{{curRate}} {{text}}</div>
   </div>
 </template>
 
@@ -136,7 +136,6 @@ export default {
     position:absolute;
     margin-left:5px;
     top:0;
-    left:100%;
     color: #666;;
   }
 }

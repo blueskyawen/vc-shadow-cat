@@ -5,7 +5,7 @@
       <vc-pagination></vc-pagination>
     </div>
     <div class="demoItem">
-      <vc-pagination :appear-num="6"></vc-pagination>
+      <vc-pagination :appear-num="5"></vc-pagination>
     </div>
     <div class="demoItem">
       <vc-pagination :appear-num="10" :page-num="20" v-model="curPage1"></vc-pagination>
@@ -16,7 +16,7 @@
     </div>
     <h4>边框样式</h4>
     <div class="demoItem">
-      <vc-pagination :have-border="true"></vc-pagination>
+      <vc-pagination :have-border="true" :appear-num="6"></vc-pagination>
     </div>
     <div class="demoItem">
       <vc-pagination :have-border="true" :appear-num="6"></vc-pagination>

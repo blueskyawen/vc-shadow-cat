@@ -1,7 +1,13 @@
 <template>
   <div class="vc-tab">
-    <div class="tab-bars">
-      <ul :class="tabClassz">
+    <div class="tab-bars" :class="{'hasOperBtn':showOpers}" ref="tabContain">
+      <span class="tab-oper tab-prev" @click.stop="goPre" :class="{'disbaled':disablePreOper}" ref="preOper">
+        <span></span>
+      </span>
+      <span class="tab-oper tab-next" @click.stop="goNext" :class="{'disbaled':disableNextOper}" ref="nextOper">
+        <span></span>
+      </span>
+      <ul :class="tabClassz" ref="tabBars">
         <li class="barItem" v-for="option in options" :key="option.value" :title="option.name"
             :class="{ 'active': option.isActive, 'disabled': option.isDisable }" @click="selectTab(option)">
           {{option.name}}
@@ -43,6 +49,17 @@ export default {
       default: ''
     }
   },
+  data () {
+    return {
+      showOpers: false,
+      disablePreOper: false,
+      disableNextOper: false,
+      scrollWidth: 0,
+      tabContainWidth: 0,
+      offset: 0,
+      overWidth: 0
+    }
+  },
   created: function () {
     this.options.forEach(option => {
       this.$set(option, 'isActive', false)
@@ -54,6 +71,12 @@ export default {
     } else {
       this.options[0].isActive = true
       this.$emit('change', this.options[0].value)
+    }
+  },
+  mounted: function () {
+    this.getTabWidths()
+    window.onresize = () => {
+      this.getTabWidths()
     }
   },
   computed: {
@@ -73,6 +96,55 @@ export default {
       })
       option.isActive = true
       this.$emit('change', option.value)
+    },
+    getTabWidths: function () {
+      this.scrollWidth = this.$refs.tabBars.scrollWidth
+      this.tabContainWidth = this.$refs.tabContain.clientWidth
+      this.overWidth = this.scrollWidth - this.tabContainWidth
+      if (this.overWidth > 0) {
+        this.$refs.preOper.style.display = 'inline-flex'
+        this.$refs.nextOper.style.display = 'inline-flex'
+        this.$refs.tabBars.style.width = 'auto'
+        this.showOpers = true
+      } else {
+        this.$refs.preOper.style.display = 'none'
+        this.$refs.nextOper.style.display = 'none'
+        this.$refs.tabBars.style.marginLeft = '0'
+        this.$refs.tabBars.style.width = '100%'
+        this.offset = 0
+        this.showOpers = false
+      }
+    },
+    goPre: function () {
+      if ((this.overWidth + this.offset) <= 0) {
+        this.disablePreOper = true
+        this.disableNextOper = false
+        return
+      }
+      if ((this.overWidth + this.offset) < 40) {
+        this.$refs.tabBars.style.marginLeft = '-' + this.overWidth + 'px'
+        this.offset = 0 - this.overWidth
+      } else {
+        this.offset -= 80
+        this.$refs.tabBars.style.marginLeft = this.offset + 'px'
+        this.disablePreOper = false
+      }
+      this.disableNextOper = false
+    },
+    goNext: function () {
+      if (this.offset >= 0) {
+        return
+      }
+      if ((80 + this.offset) < 0) {
+        this.offset += 80
+        this.$refs.tabBars.style.marginLeft = this.offset + 'px'
+        this.disableNextOper = false
+      } else {
+        this.$refs.tabBars.style.marginLeft = '0'
+        this.offset = 0
+        this.disableNextOper = true
+      }
+      this.disablePreOper = false
     }
   }
 }
@@ -87,11 +159,57 @@ export default {
     width: inherit;
     margin:auto;
     position:relative;
-    overflow-y: hidden;
-    overflow-x: auto;
+    overflow: hidden;
     box-sizing: border-box;
+    &.hasOperBtn {
+      ul {
+        padding: 0 20px;
+      }
+      .tab-oper {
+        display: none;
+        height:100%;
+        position: absolute;
+        font-size: 24px;
+        color:#999;
+        align-items: center;
+        width:20px;
+        background: #fff;
+        z-index: 2;
+        justify-content: center;
+        > span {
+          display: inline-block;
+          height: 9px;
+          width: 9px;
+          border: solid 2px #999;
+          transform: rotate(45deg);
+        }
+        &:hover {
+          background: #f2f2f2;
+          color:#666;
+          cursor: pointer;
+        }
+        &.disbaled {
+          cursor: not-allowed;
+          &:hover {
+            background: #f2f2f2;
+          }
+        }
+        &.tab-prev {
+          left:0;
+          > span {
+            border-color: transparent transparent #999 #999;
+          }
+        }
+        &.tab-next {
+          right:0;
+          > span {
+            border-color: #999 #999 transparent transparent;
+          }
+        }
+      }
+    }
     ul {
-      width: inherit;
+      width: 100%;
       list-style:none;
       display: flex;
       border-bottom:solid 1px #ddd;
@@ -146,7 +264,7 @@ export default {
           border-right:none;
           justify-content: center;
           align-items: center;
-          &:last-child {
+          &:last-of-type {
             border-right: 1px solid #999;
             border-radius:0 4px 4px 0;
           }
