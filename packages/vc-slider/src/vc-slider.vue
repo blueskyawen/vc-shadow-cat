@@ -94,13 +94,13 @@ export default {
       height:12px;
       border:solid 3px #0066ff;
       border-radius:100%;
-      left:200px;
+      //left:200px;
       margin-left:-5px;
       background:#fff;
     }
     .before {
       display:inline-block;
-      width:205px;
+      //width:205px;
       height:8px;
       border:none;
       border-radius:4px 0 0 4px;
@@ -111,7 +111,7 @@ export default {
     }
     .after {
       display:inline-block;
-      width:295px;
+      //width:295px;
       height:8px;
       border:none;
       border-radius:0 4px 4px 0;

@@ -1,0 +1,104 @@
+.vc-container {
+  width:100%;
+  margin-left:auto;
+  margin-right:auto;
+  border: solid 1px;
+  /*超小型桌面,手机*/
+  @media (max-width: @vc-screen-xs-min) {
+    width: 100%;
+  }
+  /*小型桌面,平板*/
+  @media (min-width: @vc-screen-sm-min) {
+    width: 100%;
+  }
+  /*中型桌面屏幕*/
+  @media (min-width: @vc-screen-md-min) {
+    width: 100%;
+  }
+  /*大型桌面屏幕*/
+  @media (min-width: @vc-screen-lg-min) {
+    width: 100%;
+  }
+  /*超大型桌面屏幕*/
+  @media (min-width: @vc-screen-xl-min) {
+    width: 100%;
+  }
+}
+
+.vc-row {
+  width:100%;
+  display: flex;
+  display: -webkit-flex;
+}
+.vc-col {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  align-items:center;
+  box-sizing:border-box;
+}
+/*超小型桌面,手机*/
+/*@media (max-width: 575px) {
+
+}*/
+.calc-flex-grid-columns(@index,@class,@type) when (@type = width) and (@index > 0) {
+  .vc-@{class}-col-@{index} {
+    width: percentage((@index / @max-grid-num)) !important;
+  }
+}
+.calc-flex-grid-columns(@index,@class,@type) when (@type = offset-left) and (@index > 0) {
+  .vc-@{class}-offset-@{index} {
+    margin-left: percentage((@index / @max-grid-num));
+  }
+}
+.calc-flex-grid-columns(@index,@class,@type) when (@type = offset-right) and (@index > 0) {
+  .vc-@{class}-right-offset-@{index} {
+    margin-left: percentage((@index / @max-grid-num));
+  }
+}
+.loop-flex-grid-columns(@index,@class,@type) when (@index > 0) {
+  .calc-flex-grid-columns(@index,@class,@type);
+  .loop-flex-grid-columns((@index - 1),@class,@type);
+}
+.vc-make-grid(@class) {
+  .loop-flex-grid-columns(@max-grid-num,@class,width);
+  .loop-flex-grid-columns(@max-grid-num,@class,offset-left);
+  .loop-flex-grid-columns(@max-grid-num,@class,offset-right);
+}
+.vc-make-display(@class) {
+  .calc-display-grid-types(@class,none);
+  .calc-display-grid-types(@class,flex);
+  .calc-display-grid-types(@class,block);
+  .calc-display-grid-types(@class,inline-block);
+  .calc-display-grid-types(@class,inline-flex);
+}
+.calc-display-grid-types(@class,@type) {
+  .vc-@{class}-display-@{type} {
+    display: @type !important;
+  }
+}
+
+.vc-make-grid(xs);
+.vc-make-display(xs);
+/*小型桌面,平板*/
+@media (min-width: @vc-screen-sm-min) {
+  .vc-make-grid(sm);
+  .vc-make-display(sm);
+}
+/*中型桌面屏幕*/
+@media (min-width: @vc-screen-md-min) {
+  .vc-make-grid(md);
+  .vc-make-display(md);
+}
+/*大型桌面屏幕*/
+@media (min-width: @vc-screen-lg-min) {
+  .vc-make-grid(lg);
+  .vc-make-display(lg);
+}
+/*超大型桌面屏幕*/
+@media (min-width: @vc-screen-xl-min) {
+  .vc-make-grid(xl);
+  .vc-make-display(xl);
+}
+
+

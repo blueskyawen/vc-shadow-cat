@@ -17,12 +17,13 @@ import vcCollapse from './vc-collapse'
 import vcSelect from './vc-select'
 import vcMutilSelect from './vc-mutil-select'
 import vcSlider from './vc-slider'
+import vcDialog from './vc-dialog'
 
 // 存储组件列表
 const components = [
   vcSwitch, vcLoading, vcButton, vcCheckbox, vcMutilCheckbox, vcRadio, vcInfo, vcNumInput,
   vcCarousel, vcTooltip, vcTab, vcPagination, vcRate, vcSelect, vcMutilSelect, vcSlider,
-  ...vcForm, ...vcCollapse
+  vcDialog, ...vcForm, ...vcCollapse
 ]
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，则所有的组件都将被注册
@@ -66,6 +67,7 @@ export default {
   vcSelect,
   vcMutilSelect,
   vcSlider,
+  vcDialog,
   ...vcForm,
   ...vcCollapse
 }

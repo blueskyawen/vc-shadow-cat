@@ -90,6 +90,10 @@ export default new Router({
           component: () => import('./docs/element/slider.md')
         },
         {
+          path: 'dialog',
+          component: () => import('./docs/element/dialog.md')
+        },
+        {
           path: '*',
           component: NotFound
         }
