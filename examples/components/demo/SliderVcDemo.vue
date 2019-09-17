@@ -16,6 +16,21 @@
         <vc-slider style="width: 500px" v-model="value3"></vc-slider>
         <p class="demoText">当前值：{{value3}}</p>
       </div>
+      <h4>自定义total</h4>
+      <div class="demoItem">
+        <vc-slider style="width: 600px" :total="150" v-model="value4"></vc-slider>
+        <p class="demoText">当前值：{{value4}}</p>
+      </div>
+    </div>
+    <div v-if="type === 'text'">
+      <h4>正常输入</h4>
+      <div class="demoItem">
+        <vc-slider :withTitle="true" v-model="value5"></vc-slider>
+      </div>
+      <h4>自定义宽度</h4>
+      <div class="demoItem">
+        <vc-slider style="width: 500px" :withTitle="true" v-model="value6"></vc-slider>
+      </div>
     </div>
   </div>
 </template>
@@ -32,7 +47,8 @@ export default {
       value2: 40,
       value3: 20,
       value4: 60,
-      value5: 20
+      value5: 60,
+      value6: 30
     }
   }
 }

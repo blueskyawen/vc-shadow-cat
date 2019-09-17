@@ -63,7 +63,7 @@ export default {
 
 <style scoped lang="less">
 .vc-slider {
-  display:inline-block;
+  display:inline-flex;
   width:100%;
   height:30px;
   position:relative;
@@ -154,6 +154,7 @@ export default {
     width: 30px;
     line-height: 30px;
     text-align: center;
+    font-size: 14px;
   }
 }
 </style>
