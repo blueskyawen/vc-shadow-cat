@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d21da34"],{d1c4:function(e,n,c){"use strict";c.r(n);var t=function(){var e=this,n=e.$createElement,c=e._self._c||n;return c("section",[c("h1",[e._v("可拖拽区间")]),c("p",[e._v("用于区域的动态伸缩以及可拖拽布局")]),c("p",[c("ResizeAreaVcDemo")],1)])},s=[],u=c("2877"),a={},l=Object(u["a"])(a,t,s,!1,null,null,null);n["default"]=l.exports}}]);
+//# sourceMappingURL=chunk-2d21da34.304e3417.js.map

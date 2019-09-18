@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0b9c15"],{"33fe":function(e,n,t){"use strict";t.r(n);var c=function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("section",[t("h1",[e._v("头像")]),t("p",[e._v("用来代表用户或事物，支持图片、图标展示")]),t("p",[t("AvatarVcDemo")],1)])},u=[],a=t("2877"),l={},o=Object(a["a"])(l,c,u,!1,null,null,null);n["default"]=o.exports}}]);
+//# sourceMappingURL=chunk-2d0b9c15.898f9e42.js.map

@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d20fe69"],{b632:function(e,n,t){"use strict";t.r(n);var c=function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("section",[t("h1",[e._v("消息表情")]),t("p",[e._v("用于显示消息的动态卡通头像")]),t("p",[t("MsgeifVcDemo")],1)])},s=[],u=t("2877"),l={},o=Object(u["a"])(l,c,s,!1,null,null,null);n["default"]=o.exports}}]);
+//# sourceMappingURL=chunk-2d20fe69.317bbd5e.js.map
