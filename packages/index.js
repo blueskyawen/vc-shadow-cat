@@ -19,12 +19,19 @@ import vcMutilSelect from './vc-mutil-select'
 import vcSlider from './vc-slider'
 import vcDialog from './vc-dialog'
 import vcProgress from './vc-progress'
+import vcMsgeif from './vc-msgeif'
+import vcSkeleton from './vc-skeleton'
+import vcAvatar from './vc-avatar'
+import vcResizeArea from './vc-resizeArea'
+import vcAlert from './vc-alert'
+import vcDrawer from './vc-drawer'
 
 // 存储组件列表
 const components = [
   vcSwitch, vcLoading, vcButton, vcCheckbox, vcMutilCheckbox, vcRadio, vcInfo, vcNumInput,
   vcCarousel, vcTooltip, vcTab, vcPagination, vcRate, vcSelect, vcMutilSelect, vcSlider,
-  vcDialog, vcProgress, ...vcForm, ...vcCollapse
+  vcDialog, vcProgress, vcMsgeif, vcSkeleton, vcAvatar, vcResizeArea, vcAlert, vcDrawer,
+  ...vcForm, ...vcCollapse
 ]
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，则所有的组件都将被注册
@@ -70,6 +77,12 @@ export default {
   vcSlider,
   vcDialog,
   vcProgress,
+  vcMsgeif,
+  vcSkeleton,
+  vcAvatar,
+  vcResizeArea,
+  vcDrawer,
+  vcAlert,
   ...vcForm,
   ...vcCollapse
 }

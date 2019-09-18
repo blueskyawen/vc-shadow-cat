@@ -18,6 +18,12 @@ import MutilSelectVcDemo from './MutilSelectVcDemo'
 import SliderVcDemo from './SliderVcDemo'
 import DialogVcDemo from './DialogVcDemo'
 import ProgressVcDemo from './ProgressVcDemo'
+import MsgeifVcDemo from './MsgeifVcDemo'
+import SkeletonVcDemo from './SkeletonVcDemo'
+import AvatarVcDemo from './AvatarVcDemo'
+import ResizeAreaVcDemo from './ResizeAreaVcDemo'
+import AlertVcDemo from './AlertVcDemo'
+import DrawerVcDemo from './DrawerVcDemo'
 
 Vue.component('DemoBlock', DemoBlock)
 Vue.component('SwitchVcDemo', SwitchVcDemo)
@@ -38,3 +44,9 @@ Vue.component('MutilSelectVcDemo', MutilSelectVcDemo)
 Vue.component('SliderVcDemo', SliderVcDemo)
 Vue.component('DialogVcDemo', DialogVcDemo)
 Vue.component('ProgressVcDemo', ProgressVcDemo)
+Vue.component('MsgeifVcDemo', MsgeifVcDemo)
+Vue.component('SkeletonVcDemo', SkeletonVcDemo)
+Vue.component('AvatarVcDemo', AvatarVcDemo)
+Vue.component('ResizeAreaVcDemo', ResizeAreaVcDemo)
+Vue.component('AlertVcDemo', AlertVcDemo)
+Vue.component('DrawerVcDemo', DrawerVcDemo)

@@ -98,6 +98,30 @@ export default new Router({
           component: () => import('./docs/element/progress.md')
         },
         {
+          path: 'msgeif',
+          component: () => import('./docs/element/msgeif.md')
+        },
+        {
+          path: 'skeleton',
+          component: () => import('./docs/element/skeleton.md')
+        },
+        {
+          path: 'avatar',
+          component: () => import('./docs/element/avatar.md')
+        },
+        {
+          path: 'resizeArea',
+          component: () => import('./docs/element/resizeArea.md')
+        },
+        {
+          path: 'alert',
+          component: () => import('./docs/element/alert.md')
+        },
+        {
+          path: 'drawer',
+          component: () => import('./docs/element/drawer.md')
+        },
+        {
           path: '*',
           component: NotFound
         }
