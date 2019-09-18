@@ -17,6 +17,7 @@ import SelectVcDemo from './SelectVcDemo'
 import MutilSelectVcDemo from './MutilSelectVcDemo'
 import SliderVcDemo from './SliderVcDemo'
 import DialogVcDemo from './DialogVcDemo'
+import ProgressVcDemo from './ProgressVcDemo'
 
 Vue.component('DemoBlock', DemoBlock)
 Vue.component('SwitchVcDemo', SwitchVcDemo)
@@ -36,3 +37,4 @@ Vue.component('SelectVcDemo', SelectVcDemo)
 Vue.component('MutilSelectVcDemo', MutilSelectVcDemo)
 Vue.component('SliderVcDemo', SliderVcDemo)
 Vue.component('DialogVcDemo', DialogVcDemo)
+Vue.component('ProgressVcDemo', ProgressVcDemo)

@@ -94,6 +94,10 @@ export default new Router({
           component: () => import('./docs/element/dialog.md')
         },
         {
+          path: 'progress',
+          component: () => import('./docs/element/progress.md')
+        },
+        {
           path: '*',
           component: NotFound
         }
