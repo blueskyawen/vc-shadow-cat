@@ -76,7 +76,7 @@ export default {
         { label: 'Saas', value: 'saas', disable: false },
         { label: 'NG-ANT', value: 'ng-ant', disable: false }
       ],
-      selectedItems2: ['iaas', 'saas'],
+      selectedItems2: ['iaas', 'paas'],
       options3: [
         { label: 'paletxUI-paletxUI-paletxUI-paletxUI-paletxUI-paletxUI-paletxUI-paletxUI',
           value: 'paletxui',

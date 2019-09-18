@@ -41,9 +41,10 @@ export default {
         { label: '滑动输入', name: 'slider', routeLink: 'slider' },
         { label: '模态框', name: 'dialog', routeLink: 'dialog' },
         { label: '进度条', name: 'progress', routeLink: 'progress' },
-        { label: '穿梭选择框', name: 'transfer', routeLink: 'transfer' },
+        { label: '步骤条', name: 'step', routeLink: 'step' },
         { label: '柱状图', name: 'barChart', routeLink: 'barChart' },
         { label: '饼环状图', name: 'pieChart', routeLink: 'pieChart' },
+        { label: '日期时间选择器', name: 'dateSelector', routeLink: 'dateSelector' },
         { label: '抽屉', name: 'drawer', routeLink: 'drawer' },
         { label: '可拖拽区间', name: 'resizeArea', routeLink: 'resizeArea' },
         { label: '头像', name: 'avater', routeLink: 'avater' },
@@ -51,7 +52,6 @@ export default {
         { label: '消息表情', name: 'msgEif', routeLink: 'msgEif' },
         { label: '加载占位', name: 'skeleton', routeLink: 'skeleton' }
         /* { label: '标签', name: 'label', routeLink: 'label' },
-        { label: '穿梭选择框', name: 'transfer', routeLink: 'transfer' },
         { label: '日期时间选择器', name: 'dateTimeSelector', routeLink: 'dateTimeSelector' } */
       ]
     }
