@@ -102,7 +102,6 @@ export default {
       if (this.autoPlay) {
         this.autoTimerId = setInterval(() => {
           this.nextPage()
-          console.log('nextPage')
         }, this.timerlen)
       }
     },

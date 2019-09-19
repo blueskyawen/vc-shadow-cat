@@ -11,6 +11,11 @@ module.exports = {
       filename: 'index.html'
     }
   },
+  configureWebpack: {
+    performance: {
+      hints: false
+    }
+  },
   css: { extract: false },
   chainWebpack: config => {
     config.resolve.alias

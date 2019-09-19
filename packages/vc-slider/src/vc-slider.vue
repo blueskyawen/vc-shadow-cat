@@ -53,7 +53,6 @@ export default {
   },
   methods: {
     rangeChange: function ($event) {
-      console.log($event.target.value)
       this.curValue = +$event.target.value
       this.$emit('input', this.curValue)
     }
