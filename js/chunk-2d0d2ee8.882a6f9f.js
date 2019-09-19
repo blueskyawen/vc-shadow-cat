@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0d2ee8"],{"5b38":function(e,n,t){"use strict";t.r(n);var c=function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("section",[t("h1",[e._v("警告提示")]),t("p",[e._v("展现需要关注的信息, 当某个页面需要向用户显示警告的信息时使用，非浮层的静态展现形式，始终展现，不会自动消失，可以点击关闭")]),t("p",[t("AlertVcDemo")],1)])},l=[],u=t("2877"),o={},r=Object(u["a"])(o,c,l,!1,null,null,null);n["default"]=r.exports}}]);
+//# sourceMappingURL=chunk-2d0d2ee8.882a6f9f.js.map

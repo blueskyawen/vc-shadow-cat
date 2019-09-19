@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0c7f61"],{"539f":function(e,n,t){"use strict";t.r(n);var c=function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("section",[t("h1",[e._v("加载占位")]),t("p",[e._v("在需要等待加载内容的位置提供一个占位图")]),t("p",[t("SkeletonVcDemo")],1)])},l=[],o=t("2877"),u={},s=Object(o["a"])(u,c,l,!1,null,null,null);n["default"]=s.exports}}]);
-//# sourceMappingURL=chunk-2d0c7f61.b4b14396.js.map
