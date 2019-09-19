@@ -164,6 +164,14 @@ export default new Router({
           component: () => import('./docs/pattern/filter.md')
         },
         {
+          path: 'grid',
+          component: () => import('./docs/pattern/grid.md')
+        },
+        {
+          path: 'form',
+          component: () => import('./docs/pattern/form.md')
+        },
+        {
           path: '*',
           component: NotFound
         }

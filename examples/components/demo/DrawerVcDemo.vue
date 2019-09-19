@@ -14,7 +14,7 @@
       </div>
     </vc-drawer>
     <vc-drawer v-model="showFlag2" :place="'top'" :header="'上边Drawer'">
-      <div class="content-left">
+      <div class="content-top">
         <p>Some contents...</p>
         <p>Some contents...</p>
       </div>
@@ -26,6 +26,29 @@
       </div>
     </vc-drawer>
     <vc-drawer v-model="showFlag4" :place="'down'" :header="'下边Drawer'">
+      <div class="content-top">
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </div>
+    </vc-drawer>
+    <div v-if="type === 'manual'">
+      <vc-button class="item" @click="showFlag5=true">不展示遮罩</vc-button>
+      <vc-button class="item" @click="showFlag6=true">点击遮罩不关闭</vc-button>
+      <vc-button class="item" @click="showFlag7=true">无关闭按钮</vc-button>
+    </div>
+    <vc-drawer v-model="showFlag5" :place="'right'" :show-shade="false">
+      <div class="content-left">
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </div>
+    </vc-drawer>
+    <vc-drawer v-model="showFlag6" :place="'right'" :click-shade-close="false">
+      <div class="content-left">
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </div>
+    </vc-drawer>
+    <vc-drawer v-model="showFlag7" :place="'right'" :closable="false">
       <div class="content-left">
         <p>Some contents...</p>
         <p>Some contents...</p>
@@ -47,7 +70,8 @@ export default {
       showFlag3: false,
       showFlag4: false,
       showFlag5: false,
-      showFlag6: false
+      showFlag6: false,
+      showFlag7: false
     }
   }
 }
@@ -67,12 +91,12 @@ export default {
     margin-right: 15px;
   }
   .content-left {
-    width: 420px;
+    width: 360px;
     max-width: 80%;
     box-sizing: border-box;
   }
   .content-top {
-    height: 150px;
+    height: 120px;
     max-height: 80%;
     box-sizing: border-box;
   }
