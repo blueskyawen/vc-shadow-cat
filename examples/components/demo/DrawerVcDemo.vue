@@ -89,6 +89,7 @@ export default {
   }
   .item {
     margin-right: 15px;
+    margin-bottom: 10px;
   }
   .content-left {
     width: 360px;
