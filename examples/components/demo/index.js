@@ -24,6 +24,8 @@ import AvatarVcDemo from './AvatarVcDemo'
 import ResizeAreaVcDemo from './ResizeAreaVcDemo'
 import AlertVcDemo from './AlertVcDemo'
 import DrawerVcDemo from './DrawerVcDemo'
+import PieVcDemo from './PieVcDemo'
+import BarsVcDemo from './BarsVcDemo'
 
 Vue.component('DemoBlock', DemoBlock)
 Vue.component('SwitchVcDemo', SwitchVcDemo)
@@ -50,3 +52,5 @@ Vue.component('AvatarVcDemo', AvatarVcDemo)
 Vue.component('ResizeAreaVcDemo', ResizeAreaVcDemo)
 Vue.component('AlertVcDemo', AlertVcDemo)
 Vue.component('DrawerVcDemo', DrawerVcDemo)
+Vue.component('PieVcDemo', PieVcDemo)
+Vue.component('BarsVcDemo', BarsVcDemo)

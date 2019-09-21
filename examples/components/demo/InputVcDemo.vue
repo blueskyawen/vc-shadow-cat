@@ -121,6 +121,7 @@ export default {
   .demo-item {
     width: 600px;
     margin: 10px 0;
+    max-width: 100%;
     .demo-btn {
       margin-right: 15px;
     }

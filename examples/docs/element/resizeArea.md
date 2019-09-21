@@ -111,9 +111,9 @@
 
 | 参数 | 说明 |	类型 |	可选值 |	默认值 |
 |---|---|---|---|---|
-| leftWidth | 类型 | string | success,info,warn,danger | success |
-| minLeftWidth | 有关闭按钮 | boolean | true,false | false |
-| minRightWidth | 带图标 | boolean | true,false | false |
-| resizable | 提示内容 | string | 无 | header |
-| single | 展示提示 | boolean | true,false | false |
-| hasBorder | 展示提示 | boolean | true,false | false |
+| leftWidth | 左区间宽度 | string | px,% | 50% |
+| minLeftWidth | 左区间最小宽度 | number | 无 | 150 |
+| minRightWidth | 右区间最小宽度 | number | 无 | 150 |
+| resizable | 是否可拖拽 | boolean | true,false | true |
+| single | 单区间 | boolean | true,false | false |
+| hasBorder | 有拖拽间隔 | boolean | true,false | false |
