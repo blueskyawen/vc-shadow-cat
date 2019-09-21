@@ -126,10 +126,6 @@ export default new Router({
           component: () => import('./docs/element/pie.md')
         },
         {
-          path: 'bars',
-          component: () => import('./docs/element/bars.md')
-        },
-        {
           path: '*',
           component: NotFound
         }
