@@ -15,24 +15,6 @@ body {
 .vc-flex-grow-1 {
   flex: 1 1 auto;
 }
-.vc-row-block {
-  display: block !important;
-}
-.vc-row-inline-block {
-  display: inline-block !important;
-}
-.vc-row-table {
-  display: table !important;
-}
-.vc-row-none {
-  display: none !important;
-}
-.vc-row-flex {
-  display: flex !important;
-}
-.vc-row-inline-flex {
-  display: inline-flex !important;
-}
 .vc-flex-row {
   flex-direction: row !important;
 }
@@ -193,6 +175,16 @@ body {
   display: table;
   box-sizing: border-box;
   clear: both;
+}
+.vc-row-flex {
+  width: 100%;
+  display: flex;
+  zoom: 1;
+  box-sizing: border-box;
+  height: auto;
+  position: relative;
+  margin-left: 0;
+  margin-right: 0;
 }
 .vc-col {
   display: block;

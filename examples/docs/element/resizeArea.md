@@ -112,8 +112,8 @@
 | 参数 | 说明 |	类型 |	可选值 |	默认值 |
 |---|---|---|---|---|
 | leftWidth | 左区间宽度 | string | px,% | 50% |
-| minLeftWidth | 左区间最小宽度 | number | 无 | 150 |
-| minRightWidth | 右区间最小宽度 | number | 无 | 150 |
+| minLeftWidth | 左区间最小宽度 | number | 无 | 100 |
+| minRightWidth | 右区间最小宽度 | number | 无 | 100 |
 | resizable | 是否可拖拽 | boolean | true,false | true |
 | single | 单区间 | boolean | true,false | false |
 | hasBorder | 有拖拽间隔 | boolean | true,false | false |

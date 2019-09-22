@@ -124,6 +124,7 @@ export default {
     max-width: 100%;
     .demo-btn {
       margin-right: 15px;
+      margin-bottom: 10px;
     }
   }
   .demo-item2 {

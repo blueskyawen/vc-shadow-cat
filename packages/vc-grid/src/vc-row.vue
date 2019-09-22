@@ -1,5 +1,5 @@
 <template>
-  <div class="vc-row" :class="rowClasses">
+  <div :class="rowClasses">
     <slot></slot>
   </div>
 </template>
@@ -14,19 +14,19 @@ export default {
     },
     justify: {
       type: String,
-      default: 'start'
+      default: ''
     },
     align: {
       type: String,
-      default: 'top'
+      default: ''
     },
     direction: {
       type: String,
-      default: 'row'
+      default: ''
     },
     wrap: {
       type: String,
-      default: 'wrap'
+      default: ''
     },
     grow: {
       type: Number,
@@ -35,8 +35,11 @@ export default {
   },
   computed: {
     rowClasses: function () {
-      return [ 'vc-row-' + this.type, this.directionClass, this.justifyClass, this.alignClass,
+      return [ this.typeClass, this.directionClass, this.justifyClass, this.alignClass,
         this.wrapClass, this.growClass ]
+    },
+    typeClass: function () {
+      return { 'vc-row': this.type === 'block', 'vc-row-flex': this.type === 'flex' }
     },
     directionClass: function () {
       return ['flex', 'inline-flex'].includes(this.type) && this.direction ? 'vc-flex-' + this.direction : ''

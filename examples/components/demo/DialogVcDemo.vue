@@ -137,7 +137,7 @@ export default {
       margin: 10px 20px;
     }
     form {
-      margin:15px auto 15px;
+      margin:10px auto 10px;
       .form-label {
         width: 25%;
       }
@@ -155,8 +155,11 @@ export default {
     text-indent:50px;
   }
   @media (max-width: 767px) {
+    .DialogVcDemo form {
+      margin:0 auto;
+    }
     .wenzhang {
-      max-height: 500px;
+      max-height: 300px;
       overflow-y: auto;
     }
   }

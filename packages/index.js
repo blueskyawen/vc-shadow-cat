@@ -28,7 +28,7 @@ import vcDrawer from './vc-drawer'
 import vcBadge from './vc-badge'
 import vcPie from './vc-pie'
 import vcGrid from './vc-grid'
-import vcDateTime from 'vc-date-time'
+import vcDateTime from './vc-date-time'
 
 // 存储组件列表
 const components = [

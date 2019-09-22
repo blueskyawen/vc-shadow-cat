@@ -48,9 +48,8 @@ export default {
         { label: '加载占位', name: 'skeleton', routeLink: 'skeleton' },
         { label: '可拖拽区间', name: 'resizeArea', routeLink: 'resizeArea' },
         { label: '饼环状图', name: 'pie', routeLink: 'pie' },
-        { label: '柱状图', name: 'bars', routeLink: 'bars' },
         { label: '警告', name: 'alert', routeLink: 'alert' }
-        // { label: '数组件', name: 'tree', routeLink: 'tree' }
+        // { label: '树组件', name: 'tree', routeLink: 'tree' }
         // { label: '步骤条', name: 'steps', routeLink: 'steps' },
         // { label: '级联选择', name: 'cascader', routeLink: 'cascader' }
       ]

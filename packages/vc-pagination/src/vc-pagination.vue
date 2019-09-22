@@ -44,16 +44,18 @@ export default {
       curNum: 0,
       pages: [],
       minNum: 0,
-      maxNum: 0
+      maxNum: 0,
+      realApperNum: 0
     }
   },
   created: function () {
-    for (var index = 0; index < this.appearNum; index++) {
+    this.realApperNum = this.appearNum > 0 && this.appearNum <= 10 ? this.appearNum : 5
+    for (var index = 0; index < this.realApperNum; index++) {
       this.pages.push(index + this.curPage)
     }
     this.curNum = this.curPage
     this.minNum = this.curPage
-    this.maxNum = this.curPage + this.appearNum - 1
+    this.maxNum = this.curPage + this.realApperNum - 1
   },
   methods: {
     selectPage: function (page) {
@@ -66,7 +68,7 @@ export default {
         this.curNum--
         this.minNum = this.curNum
         this.maxNum--
-        for (var index = 0; index < this.appearNum; index++) {
+        for (var index = 0; index < this.realApperNum; index++) {
           --this.pages[index]
         }
       } else {
@@ -80,7 +82,7 @@ export default {
         this.curNum++
         this.maxNum = this.curNum
         this.minNum++
-        for (var index = 0; index < this.appearNum; index++) {
+        for (var index = 0; index < this.realApperNum; index++) {
           ++this.pages[index]
         }
       } else {
@@ -96,6 +98,9 @@ export default {
 .vc-pagination {
   padding: 10px;
   margin: 0;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow-x: auto;
   li {
     display: inline-block;
     a {

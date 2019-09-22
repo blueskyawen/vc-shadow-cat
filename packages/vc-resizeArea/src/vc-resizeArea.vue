@@ -22,11 +22,11 @@ export default {
     },
     minLeftWidth: {
       type: Number,
-      default: 150
+      default: 100
     },
     minRightWidth: {
       type: Number,
-      default: 150
+      default: 100
     },
     resizable: {
       type: Boolean,
@@ -190,6 +190,11 @@ export default {
       margin-left: -2px;
       margin-right: 0;
     }
+  }
+}
+@media (max-width: 767px) {
+  .vc-resizeArea .left-resize-area, .vc-resizeArea .right-resize-area {
+    min-width: auto;
   }
 }
 </style>

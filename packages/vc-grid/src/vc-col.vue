@@ -72,7 +72,9 @@ export default {
         this.orderStyle(this.xl.order),
         this.offsetStyle('xl', this.xl.offset),
         this.displayStyle('xl', this.xl.type)]
-    },
+    }
+  },
+  methods: {
     spanStyle: function (type, value) {
       return value ? 'vc-' + type + '-col-' + value : ''
     },
