@@ -47,7 +47,7 @@ Vue.use(VcLoading)
 
 #### 3）库样式(选用)
 
-本库提供了一些布局的全局样式，有需要可以引入使用
+本库提供了一些布局的全局样式，使用珊格时需要引入
 
 ```javascript
 import './node_modules/vc-shadow-cat/vc-shadow-cat.css'
