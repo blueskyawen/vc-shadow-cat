@@ -2,7 +2,6 @@
   width:100%;
   margin-left:auto;
   margin-right:auto;
-  border: solid 1px;
   /*超小型桌面,手机*/
   @media (max-width: @vc-screen-xs-min) {
     width: 100%;
@@ -27,15 +26,30 @@
 
 .vc-row {
   width:100%;
-  display: flex;
-  display: -webkit-flex;
+  display: block;
+  zoom: 1;
+  box-sizing: border-box;
+  height: auto;
+  position: relative;
+  margin-left: 0;
+  margin-right: 0;
+}
+.vc-row:before {
+  content: "";
+  display: table;
+  box-sizing:border-box;
+}
+.vc-row:after {
+  content: "";
+  display: table;
+  box-sizing:border-box;
+  clear: both;
 }
 .vc-col {
-  display: flex;
-  display: -webkit-flex;
-  justify-content: center;
-  align-items:center;
+  display: block;
   box-sizing:border-box;
+  flex: 0 0 auto;
+  float: left;
 }
 /*超小型桌面,手机*/
 /*@media (max-width: 575px) {
@@ -48,12 +62,12 @@
 }
 .calc-flex-grid-columns(@index,@class,@type) when (@type = offset-left) and (@index > 0) {
   .vc-@{class}-offset-@{index} {
-    margin-left: percentage((@index / @max-grid-num));
+    margin-left: percentage((@index / @max-grid-num)) !important;
   }
 }
 .calc-flex-grid-columns(@index,@class,@type) when (@type = offset-right) and (@index > 0) {
   .vc-@{class}-right-offset-@{index} {
-    margin-left: percentage((@index / @max-grid-num));
+    margin-right: percentage((@index / @max-grid-num)) !important;
   }
 }
 .loop-flex-grid-columns(@index,@class,@type) when (@index > 0) {
