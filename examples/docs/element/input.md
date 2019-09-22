@@ -97,13 +97,15 @@ export default {
   <div class="inputVcDemo">
     <div class="demo-item">
         <vc-input type="text" v-model="name" :iconfix="'pre'">
-          <vc-input-icon :type="'pre'" v-slot:preIcon><span class="fa fa-user"></span></vc-input-icon>
+          <template v-slot:preIcon>
+            <vc-input-icon :type="'pre'"><span class="fa fa-user"></span></vc-input-icon>
+          </template>
         </vc-input>
     </div>
     <div class="demo-item">
-        <vc-input type="text" v-model="name" :iconfix="'sub'">
-          <vc-input-icon :type="'sub'" v-slot:subIcon><span class="fa fa-lock"></span></vc-input-icon>
-        </vc-input>
+      <template v-slot:subIcon>
+        <vc-input-icon :type="'sub'"><span class="fa fa-lock"></span></vc-input-icon>
+      </template>
     </div>
   </div>
 </template>

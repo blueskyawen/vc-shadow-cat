@@ -1,6 +1,6 @@
 {
   "name": "vc-shadow-cat",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": false,
   "description": "基于Vue的UI组件库",
   "main": "lib/vc-shadow-cat.umd.min.js",

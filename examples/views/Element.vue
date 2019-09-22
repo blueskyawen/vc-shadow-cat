@@ -42,7 +42,7 @@ export default {
         { label: '模态框', name: 'dialog', routeLink: 'dialog' },
         { label: '进度条', name: 'progress', routeLink: 'progress' },
         { label: '抽屉', name: 'drawer', routeLink: 'drawer' },
-        { label: '日期时间选择器', name: 'dateSelector', routeLink: 'dateSelector' },
+        // { label: '日期时间选择器', name: 'dateSelector', routeLink: 'dateSelector' },
         { label: '头像', name: 'avatar', routeLink: 'avatar' },
         { label: '消息表情', name: 'msgeif', routeLink: 'msgeif' },
         { label: '加载占位', name: 'skeleton', routeLink: 'skeleton' },

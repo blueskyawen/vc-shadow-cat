@@ -370,23 +370,26 @@
 
 | 参数 | 说明 |	类型 |	可选值 |	默认值 |
 |---|---|---|---|---|
-| place | 滑出方向 | string | top,right,down,left | right |
-| showShade | 展示遮罩 | boolean | true,false | true |
-| clickShadeClose | 点击展示关闭抽屉 | boolean | true,false | true |
-| closable | 有关闭按钮 | boolean | true,false | true |
-| header | 标题栏 | string | 无 | 我是标题 |
-| zIndex | 层级数 | number | 无 | 9000 |
-| isShow | 展示 | boolean | true,false | false |
+| type | 类型 | string | block,flex | block |
+| justify | flex主轴对齐方式 | string | start,end,end,space-between,space-around | 无 |
+| align | flex次轴对齐方式 | string | start,end,end,baseline,stretch | 无 |
+| direction | flex排列方向 | string | row,column,reverse,column-reverse | 无 |
+| wrap | flex-wrap | string | wrap,nowrap,wrap-reverse | 无 |
+| grow | flex-grow | number | 无 | 0 |
 
 ### vc-col
 
 | 参数 | 说明 |	类型 |	可选值 |	默认值 |
 |---|---|---|---|---|
-| place | 滑出方向 | string | top,right,down,left | right |
-| showShade | 展示遮罩 | boolean | true,false | true |
-| clickShadeClose | 点击展示关闭抽屉 | boolean | true,false | true |
-| closable | 有关闭按钮 | boolean | true,false | true |
-| header | 标题栏 | string | 无 | 我是标题 |
-| zIndex | 层级数 | number | 无 | 9000 |
-| isShow | 展示 | boolean | true,false | false |
+| xs | <576px 响应式栅格，包含其他属性的对象 | object | 无 | {} |
+| sm | >=576px 响应式栅格，包含其他属性的对象 | object | 无 | {} |
+| md | >=768px 响应式栅格，包含其他属性的对象 | object | 无 | {} |
+| lg | >=992px 响应式栅格，包含其他属性的对象 | object | 无 | {} |
+| xl | >=1200px 响应式栅格，包含其他属性的对象 | object | 无 | {} |
 
+##### col对象可包含的属性有
+
+- type，display类型，可选值：block/inline-block/flex/inline-flex/none
+- span，栅格占位格数，可选值：1-12
+- offset，栅格左侧的间隔格数，可选值：1-12
+- order，栅格顺序，flex 布局模式下有效，number数值

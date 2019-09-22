@@ -13,8 +13,8 @@ switch，用于表示项目的启用或禁止
 ```javascript
 <template>
   <div class="SwitchDemo">
-      <vc-switch :type="'max'" v-model="switchs[0]" :disabled="true"></vc-switch>
-      <vc-switch :type="'min'" v-model="switchs[1]" :disabled="true"></vc-switch>
+      <vc-switch :type="'max'" v-model="switchs[0]"></vc-switch>
+      <vc-switch :type="'min'" v-model="switchs[1]"></vc-switch>
   </div>
 </template>
 
@@ -40,8 +40,8 @@ export default {
 ```javascript
 <template>
   <div class="SwitchDemo">
-      <vc-switch :type="'max'" v-model="switchs[0]" :disabled="true"></vc-switch>
-      <vc-switch :type="'min'" v-model="switchs[1]" :disabled="true"></vc-switch>
+      <vc-switch :type="'max'" v-model="switchs[0]"></vc-switch>
+      <vc-switch :type="'min'" v-model="switchs[1]"></vc-switch>
   </div>
 </template>
 

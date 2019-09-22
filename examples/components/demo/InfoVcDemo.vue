@@ -17,7 +17,7 @@
       <vc-info :type="'success'" :location="'right'" v-model="rightShow0" :header-title="'创建成功'">
         <template v-slot:content>
           <p>倚在冬的门楣，静心遥盼雪天使的降临。娉娉婷婷，风姿绰约，飘飘扬扬，曼妙万千,新特性之一是可以使 HTML 事件触发浏览器中的行为...</p>
-          <p>3s后自动消失</p>
+          <p>2s后自动消失</p>
         </template>
         <template v-slot:footer>
           <a herf="javascript:void(0);" @click="rightShow0=false">管理实例</a>
@@ -26,7 +26,6 @@
       <vc-info :type="'warn'" :location="'right'" v-model="rightShow1" :header-title="'警告消息'">
         <template v-slot:content>
           <p>倚在冬的门楣，静心遥盼雪天使的降临。娉娉婷婷，风姿绰约，飘飘扬扬，曼妙万千,新特性之一是可以使 HTML 事件触发浏览器中的行为...</p>
-          <p>3s后自动消失</p>
         </template>
         <template v-slot:footer>
           <a herf="javascript:void(0);" @click="rightShow1=false">管理实例</a>
@@ -35,7 +34,6 @@
       <vc-info :type="'error'" :location="'right'" v-model="rightShow2" :header-title="'创建失败'">
         <template v-slot:content>
           <p>倚在冬的门楣，静心遥盼雪天使的降临。娉娉婷婷，风姿绰约，飘飘扬扬，曼妙万千,新特性之一是可以使 HTML 事件触发浏览器中的行为...</p>
-          <p>3s后自动消失</p>
         </template>
         <template v-slot:footer>
           <a herf="javascript:void(0);" @click="rightShow2=false">管理实例</a>

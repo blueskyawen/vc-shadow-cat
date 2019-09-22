@@ -39,6 +39,8 @@ export default {
     }
   },
   created: function () {
+    this.selectedOption = this.options.find(item => item.value === this.value)
+    if (!this.selectedOption) this.selectedOption = {}
     document.addEventListener('click', () => {
       if (this.isContentOpen && !this.isMoveInSelect) {
         this.isContentOpen = false

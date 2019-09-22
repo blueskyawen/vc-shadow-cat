@@ -26,6 +26,7 @@ import AlertVcDemo from './AlertVcDemo'
 import DrawerVcDemo from './DrawerVcDemo'
 import PieVcDemo from './PieVcDemo'
 import GridVcDemo from './GridVcDemo'
+import FormVcDemo from './FormVcDemo'
 
 Vue.component('DemoBlock', DemoBlock)
 Vue.component('SwitchVcDemo', SwitchVcDemo)
@@ -54,3 +55,4 @@ Vue.component('AlertVcDemo', AlertVcDemo)
 Vue.component('DrawerVcDemo', DrawerVcDemo)
 Vue.component('PieVcDemo', PieVcDemo)
 Vue.component('GridVcDemo', GridVcDemo)
+Vue.component('FormVcDemo', FormVcDemo)

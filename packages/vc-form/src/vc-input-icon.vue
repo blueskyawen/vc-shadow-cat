@@ -1,5 +1,5 @@
 <template>
-  <span class="nc-input-icon" :class="iconTypeClass">
+  <span class="vc-input-icon" :class="iconTypeClass">
     <slot></slot>
   </span>
 </template>
@@ -20,9 +20,9 @@ export default {
 </script>
 
 <style scoped lang="less">
-.nc-input-icon {
+.vc-input-icon {
   color:#a6a6a6;
-  margin:0 8px;
+  margin:1px 8px 0;
   top: 50%;
   transform: translateY(-50%);
   position: absolute;
