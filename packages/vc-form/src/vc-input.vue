@@ -4,7 +4,7 @@
       <span v-if="prefix" class="input-affix input-preffix">{{prefix}}</span>
       <slot name="preIcon"></slot>
       <input :value="value" :required="required" :disabled="disabled" :class="inputItemClassz"
-             v-bind="$attrs" @focus="focusInput" @blur="blurInput" @input="valueChange"/>
+             v-bind="$attrs" v-on="inputListeners"/>
       <slot name="subIcon"></slot>
       <span class="nc-form-group-search" v-if="search"></span>
       <span v-if="suffix" class="input-affix input-subffix">{{suffix}}</span>
@@ -81,9 +81,6 @@ export default {
     }
   },
   methods: {
-    valueChange: function ($event) {
-      this.$emit('input', $event.target.value)
-    },
     blurInput: function ($event) {
       this.isShowHint = false
       if (this.required && !$event.target.value) {
@@ -103,6 +100,23 @@ export default {
     }
   },
   computed: {
+    inputListeners: function () {
+      var vm = this
+      return Object.assign({},
+        this.$listeners,
+        {
+          input: function ($event) {
+            vm.$emit('input', $event.target.value)
+          },
+          focus: function () {
+            vm.focusInput()
+          },
+          blur: function ($event) {
+            vm.blurInput($event)
+          }
+        }
+      )
+    },
     inputClassz: function () {
       return { 'nc-form-group-item-disabled': this.disabled,
         'nc-form-group-item-error': this.isShowError }

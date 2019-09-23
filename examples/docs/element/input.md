@@ -103,9 +103,11 @@ export default {
         </vc-input>
     </div>
     <div class="demo-item">
-      <template v-slot:subIcon>
-        <vc-input-icon :type="'sub'"><span class="fa fa-lock"></span></vc-input-icon>
-      </template>
+        <vc-input type="text" v-model="name" :iconfix="'sub'">
+          <template v-slot:subIcon>
+            <vc-input-icon :type="'sub'"><span class="fa fa-lock"></span></vc-input-icon>
+          </template>
+        </vc-input>
     </div>
   </div>
 </template>

@@ -27,6 +27,7 @@ import DrawerVcDemo from './DrawerVcDemo'
 import PieVcDemo from './PieVcDemo'
 import GridVcDemo from './GridVcDemo'
 import FormVcDemo from './FormVcDemo'
+import DateVcDemo from './DateVcDemo'
 
 Vue.component('DemoBlock', DemoBlock)
 Vue.component('SwitchVcDemo', SwitchVcDemo)
@@ -56,3 +57,4 @@ Vue.component('DrawerVcDemo', DrawerVcDemo)
 Vue.component('PieVcDemo', PieVcDemo)
 Vue.component('GridVcDemo', GridVcDemo)
 Vue.component('FormVcDemo', FormVcDemo)
+Vue.component('DateVcDemo', DateVcDemo)

@@ -126,6 +126,10 @@ export default new Router({
           component: () => import('./docs/element/pie.md')
         },
         {
+          path: 'dateTime',
+          component: () => import('./docs/element/date.md')
+        },
+        {
           path: '*',
           component: NotFound
         }

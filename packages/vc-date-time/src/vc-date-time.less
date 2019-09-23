@@ -1,0 +1,108 @@
+.vc-date-select-container {
+  position: relative;
+  display: inline-block;
+  width:300px;
+  max-width: 100%;
+  &.vc-date-input-hidden {
+    overflow: hidden;
+    .vc-date-selector {
+      box-shadow: none;
+    }
+  }
+  .vc-date-selector {
+    border:solid 1px #e6e6e6;
+    border-radius:3px;
+    display:inline-flex;
+    flex-direction:column;
+    width:100%;
+    box-shadow:1px 1px 2px 2px #f2f2f2;
+    background: #fff;
+    z-index: 10;
+    min-width: 240px;
+    max-width: 100%;
+    &.vc-date-selector-dropdown {
+      position: absolute;
+      left:0;
+      top:100%;
+      z-index: 11;
+    }
+    &.vc-no-shadow {
+      box-shadow:none;
+    }
+    &.vc-insert-selector {
+      border-radius:0;
+      border:none;
+      box-shadow:none;
+    }
+    .vc-date-year-month-row {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      height:40px;
+      border-bottom:solid 1px #ccc;
+      position: relative;
+      .vc-date-year-month-oper {
+        span {
+          display:inline-block;
+          width:36px;
+          text-align:center;
+          line-height:30px;
+          cursor:pointer;
+          color:#666;
+          font-size:20px;
+          &:hover {
+            color:#0047b3;
+          }
+        }
+      }
+      .vc-date-year-month {
+        .vc-date-year,.vc-date-month {
+          cursor:pointer;
+          &:hover {
+            color:#0047b3;
+          }
+        }
+      }
+    }
+    .vc-date-time-oper {
+      display:flex;
+      justify-content:flex-end;
+      height:36px;
+      align-items:center;
+      border-top: solid 1px #ccc;
+      .vc-date-time-confirm {
+        display:inline-block;
+        width:50px;
+        height:24px;
+        font-size:14px;
+        background:#0066ff;
+        color:#fff;
+        text-align:center;
+        line-height:24px;
+        border-radius:3px;
+        margin-right:10px;
+        margin-left:10px;
+        cursor:pointer;
+        &.disable {
+          cursor: not-allowed;
+          background: #ccc;
+          opacity: 0.8;
+        }
+      }
+      vc-date-time-picker {
+        color:#0066ff;
+        cursor: pointer;
+      }
+    }
+    .vc-time-picker-day-title {
+      display: inline-block;
+      height:36px;
+      line-height: 36px;
+      text-align: center;
+      width: 100%;
+      border-bottom: solid 1px #ccc;
+      position: relative;
+    }
+  }
+}
+

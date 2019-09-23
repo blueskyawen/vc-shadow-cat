@@ -42,7 +42,7 @@ export default {
         { label: '模态框', name: 'dialog', routeLink: 'dialog' },
         { label: '进度条', name: 'progress', routeLink: 'progress' },
         { label: '抽屉', name: 'drawer', routeLink: 'drawer' },
-        // { label: '日期时间选择器', name: 'dateSelector', routeLink: 'dateSelector' },
+        { label: '时间日期选择器', name: 'dateTime', routeLink: 'dateTime' },
         { label: '头像', name: 'avatar', routeLink: 'avatar' },
         { label: '消息表情', name: 'msgeif', routeLink: 'msgeif' },
         { label: '加载占位', name: 'skeleton', routeLink: 'skeleton' },
@@ -50,7 +50,6 @@ export default {
         { label: '饼环状图', name: 'pie', routeLink: 'pie' },
         { label: '警告', name: 'alert', routeLink: 'alert' }
         // { label: '树组件', name: 'tree', routeLink: 'tree' }
-        // { label: '步骤条', name: 'steps', routeLink: 'steps' },
         // { label: '级联选择', name: 'cascader', routeLink: 'cascader' }
       ]
     }
