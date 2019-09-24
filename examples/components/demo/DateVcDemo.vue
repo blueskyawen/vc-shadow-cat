@@ -10,7 +10,7 @@
     <vc-time-select style="width: 360px" v-model="date2" :type="'input'"></vc-time-select>
     <p>timeShow: {{timeShow()}}</p>
     <h4>date-select</h4>
-    <vc-date-select style="width: 360px" v-model="datee"></vc-date-select>
+    <vc-date-select style="width: 360px" v-model="date3"></vc-date-select>
     <p>dateShow: {{dateShow()}}</p>
   </div>
 </template>

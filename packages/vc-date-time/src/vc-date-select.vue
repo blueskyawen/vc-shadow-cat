@@ -30,7 +30,7 @@
           <span class="vc-date-week" v-for="week of weeks" :key="week">{{week}}</span>
         </div>
         <div class="vc-date-day-rows">
-          <span class="vc-date-day" v-for="day of yearMonthDate.dayDatas" :key="day.date"
+          <span class="vc-date-day" v-for="(day, index) in yearMonthDate.dayDatas" :key="index"
                 @click="selectDay(day)"
                 :class="{'disable':day.disable,'active':day.active,'today':day.today}">
             <span>{{day.date}}</span>
@@ -44,7 +44,7 @@
         <vc-year-select v-model="yearMonthDate.year" @input="backDatePicker('year')"
                         :noShadow="true" :insert="true"></vc-year-select>
       </div>
-      <div class="date-picker" *ngIf="isShowMonthPicker">
+      <div class="date-picker" v-if="isShowMonthPicker">
         <vc-month-select v-model="monthPickerDate" @input="backDatePicker('month')"
                            :noShadow="true" :insert="true">
         </vc-month-select>
@@ -95,7 +95,9 @@ export default {
       isShowMonthPicker: false,
       monthPickerDate: new Date(),
       formatLabel: '/',
-      curValue: null
+      curValue: '',
+      curDate: null,
+      curYear: 0
     }
   },
   created: function () {
@@ -138,21 +140,10 @@ export default {
       this.formatLabel = this.format[4]
     },
     initData: function () {
-      if (!this.value) {
-        this.curValue = new Date()
-      } else {
-        this.curValue = new Date(this.value)
-      }
-      this.setSelectedDate()
+      if (!this.value) return
+      this.setSelectedDate(this.value)
       this.yearMonthDate.year = this.year
       this.yearMonthDate.month = this.month
-
-      this.curYear = this.value.getFullYear()
-      this.months.forEach((month) => {
-        this.$set(month, 'disable', this.disableMonths.includes(month.value))
-        this.$set(month, 'active', month.value === this.value.getMonth())
-      })
-      this.setDateValue(this.value)
     },
     getYearMonthDate: function () {
       let tmpDays = []
@@ -224,10 +215,10 @@ export default {
     formatValue: function (value) {
       return value < 10 ? '0' + value : value.toString()
     },
-    setSelectedDate: function () {
-      this.year = this.date.getFullYear()
-      this.month = this.date.getMonth()
-      this.day = this.date.getDate()
+    setSelectedDate: function (date) {
+      this.year = date.getFullYear()
+      this.month = date.getMonth()
+      this.day = date.getDate()
     },
     openSelector: function () {
       if (this.type === 'input') {
@@ -323,12 +314,10 @@ export default {
       this.emitDateChange(todayDay)
     },
     emitDateChange: function (day) {
-      this.date.setFullYear(this.yearMonthDate.year)
-      this.date.setMonth(this.yearMonthDate.month)
-      this.date.setDate(day)
-      this.setSelectedDate()
-      this.setDateValue()
-      this.$emit('input', this.date)
+      let newDate = new Date(this.yearMonthDate.year, this.yearMonthDate.month, day)
+      this.setSelectedDate(newDate)
+      this.setDateValue(newDate)
+      this.$emit('input', newDate)
       this.closeSelector()
     },
     backDatePicker: function (type) {
