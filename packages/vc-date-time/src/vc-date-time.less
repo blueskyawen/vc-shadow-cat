@@ -104,5 +104,31 @@
       position: relative;
     }
   }
+  .vc-time-selector {
+    border:solid 1px #e6e6e6;
+    border-radius:3px;
+    display:inline-flex;
+    flex-direction:column;
+    box-shadow:1px 1px 2px 2px #f2f2f2;
+    background: #fff;
+    z-index: 10;
+    min-width: 240px;
+    max-width: 100%;
+    width:100%;
+    &.vc-date-selector-dropdown {
+      position: absolute;
+      left:0;
+      top:100%;
+      z-index: 11;
+    }
+    &.vc-no-shadow {
+      box-shadow:none;
+    }
+    &.vc-insert-selector {
+      border-radius:0;
+      border:none;
+      box-shadow:none;
+    }
+  }
 }
 

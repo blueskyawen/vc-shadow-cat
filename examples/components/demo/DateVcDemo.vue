@@ -6,6 +6,9 @@
     <h4>month-select</h4>
     <vc-month-select style="width: 360px" v-model="date" :type="'input'"></vc-month-select>
     <p>monthShow: {{monthShow()}}</p>
+    <h4>time-select</h4>
+    <vc-time-select style="width: 360px" v-model="date2" :type="'input'"></vc-time-select>
+    <p>timeShow: {{timeShow()}}</p>
   </div>
 </template>
 
@@ -18,12 +21,16 @@ export default {
   data () {
     return {
       year: 2019,
-      date: new Date()
+      date: new Date(),
+      date2: new Date()
     }
   },
   methods: {
     monthShow: function () {
       return this.date.toLocaleDateString()
+    },
+    timeShow: function () {
+      return this.date2.toLocaleString()
     }
   }
 }
