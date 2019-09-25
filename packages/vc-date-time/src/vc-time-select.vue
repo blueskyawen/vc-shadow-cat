@@ -153,15 +153,11 @@ export default {
           disable: this.disableSeconds.includes(s),
           active: this.selectTime.second === s })
       }
-      this.months.forEach((month) => {
-        this.$set(month, 'disable', this.disableMonths.includes(month.value))
-        this.$set(month, 'active', month.value === this.value.getMonth())
-      })
-      this.setDateValue(this.value)
+      this.setDateValue()
     },
-    setDateValue: function (date) {
+    setDateValue: function () {
       if (this.type === 'input') {
-        this.curValue = date.toString().split(' ')[4].split(':').join(this.formatLabel)
+        this.curValue = this.selectTime.hour + this.formatLabel + this.selectTime.minute + this.formatLabel + this.selectTime.second
       }
     },
     initActivePosition: function () {
@@ -183,8 +179,8 @@ export default {
           this.isShow = false
         } else {
           this.recoverData()
-          this.setActivePosition()
           this.isShow = true
+          this.$nextTick(() => { this.setActivePosition() })
         }
       }
     },
@@ -325,7 +321,7 @@ export default {
       newDate.setMinutes(this.selectTime.minute)
       newDate.setSeconds(this.selectTime.second)
       this.$emit('input', newDate)
-      this.setDateValue(newDate)
+      this.setDateValue()
       this.closeSelector()
     }
   }
