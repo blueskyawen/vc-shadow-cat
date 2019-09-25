@@ -41,11 +41,11 @@
         </div>
       </div>
       <div class="date-picker" v-if="isShowYearPicker">
-        <vc-year-select v-model="yearMonthDate.year" @input="backDatePicker('year')"
+        <vc-year-select style="width: 100%" v-model="yearMonthDate.year" @input="backDatePicker('year')"
                         :noShadow="true" :insert="true"></vc-year-select>
       </div>
       <div class="date-picker" v-if="isShowMonthPicker">
-        <vc-month-select v-model="monthPickerDate" @input="backDatePicker('month')"
+        <vc-month-select style="width: 100%" v-model="monthPickerDate" @input="backDatePicker('month')"
                            :noShadow="true" :insert="true">
         </vc-month-select>
       </div>
@@ -314,7 +314,10 @@ export default {
       this.emitDateChange(todayDay)
     },
     emitDateChange: function (day) {
-      let newDate = new Date(this.yearMonthDate.year, this.yearMonthDate.month, day)
+      let newDate = new Date(this.value)
+      newDate.setFullYear(this.yearMonthDate.year)
+      newDate.setMonth(this.yearMonthDate.month)
+      newDate.setDate(day)
       this.setSelectedDate(newDate)
       this.setDateValue(newDate)
       this.$emit('input', newDate)

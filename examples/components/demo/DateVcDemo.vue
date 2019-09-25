@@ -10,8 +10,11 @@
     <vc-time-select style="width: 360px" v-model="date2" :type="'input'"></vc-time-select>
     <p>timeShow: {{timeShow()}}</p>
     <h4>date-select</h4>
-    <vc-date-select style="width: 360px" v-model="date3"></vc-date-select>
+    <vc-date-select style="width: 360px" v-model="date3" :type="'input'"></vc-date-select>
     <p>dateShow: {{dateShow()}}</p>
+    <h4>date-time-select</h4>
+    <vc-date-time-select style="width: 360px" v-model="date4" :type="'input'"></vc-date-time-select>
+    <p>dateTimeShow: {{dateTimeShow()}}</p>
   </div>
 </template>
 
@@ -26,7 +29,8 @@ export default {
       year: 2019,
       date: new Date(),
       date2: new Date(),
-      date3: new Date()
+      date3: new Date(),
+      date4: new Date()
     }
   },
   methods: {
@@ -38,6 +42,9 @@ export default {
     },
     dateShow: function () {
       return this.date3.toLocaleString()
+    },
+    dateTimeShow: function () {
+      return this.date4.toLocaleString()
     }
   }
 }
