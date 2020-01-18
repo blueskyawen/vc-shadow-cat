@@ -289,7 +289,6 @@ export default {
   .demoItem {
     padding: 10px 0;
     font-size: 18px;
-    border-bottom: dotted 1px #999;
     .vc-col {
       padding-left: 15px
     }

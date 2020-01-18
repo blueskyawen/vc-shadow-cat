@@ -28,6 +28,7 @@ import PieVcDemo from './PieVcDemo'
 import GridVcDemo from './GridVcDemo'
 import FormVcDemo from './FormVcDemo'
 import DateVcDemo from './DateVcDemo'
+import AsyncComponentVcDemo from './AsyncComponentVcDemo'
 
 Vue.component('DemoBlock', DemoBlock)
 Vue.component('SwitchVcDemo', SwitchVcDemo)
@@ -58,3 +59,4 @@ Vue.component('PieVcDemo', PieVcDemo)
 Vue.component('GridVcDemo', GridVcDemo)
 Vue.component('FormVcDemo', FormVcDemo)
 Vue.component('DateVcDemo', DateVcDemo)
+Vue.component('AsyncComponentVcDemo', AsyncComponentVcDemo)

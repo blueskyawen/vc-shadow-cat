@@ -180,6 +180,10 @@ export default new Router({
           component: () => import('./docs/pattern/form.md')
         },
         {
+          path: 'asyncCompt',
+          component: () => import('./docs/pattern/asyncComponent.md')
+        },
+        {
           path: '*',
           component: NotFound
         }

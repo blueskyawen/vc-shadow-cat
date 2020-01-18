@@ -24,7 +24,8 @@ export default {
       menuOptions: [
         { label: '过滤器', name: 'filter', routeLink: 'filter' },
         { label: '珊格', name: 'grid', routeLink: 'grid' },
-        { label: '表单', name: 'form', routeLink: 'form' }
+        { label: '表单', name: 'form', routeLink: 'form' },
+        { label: '动态异步组件', name: 'asyncCompt', routeLink: 'asyncCompt' }
       ]
     }
   },

@@ -29,13 +29,14 @@ import vcBadge from './vc-badge'
 import vcPie from './vc-pie'
 import vcGrid from './vc-grid'
 import vcDateTime from './vc-date-time'
+import vcAsyncComponent from './vc-async-component'
 
 // 存储组件列表
 const components = [
   vcSwitch, vcLoading, vcButton, vcCheckbox, vcMutilCheckbox, vcRadio, vcInfo, vcNumInput,
   vcCarousel, vcTooltip, vcTab, vcPagination, vcRate, vcSelect, vcMutilSelect, vcSlider,
   vcDialog, vcProgress, vcMsgeif, vcSkeleton, vcAvatar, vcResizeArea, vcAlert, vcDrawer,
-  vcBadge, vcPie, ...vcForm, ...vcCollapse, ...vcGrid, ...vcDateTime
+  vcBadge, vcPie, vcAsyncComponent, ...vcForm, ...vcCollapse, ...vcGrid, ...vcDateTime
 ]
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，则所有的组件都将被注册
@@ -89,6 +90,7 @@ export default {
   vcAlert,
   vcBadge,
   vcPie,
+  vcAsyncComponent,
   ...vcForm,
   ...vcCollapse,
   ...vcGrid,

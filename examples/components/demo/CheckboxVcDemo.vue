@@ -31,7 +31,10 @@
 export default {
   name: 'CheckboxVcDemo',
   props: {
-    type: String
+    type: {
+      type: String,
+      default: 'one'
+    }
   },
   data () {
     return {
