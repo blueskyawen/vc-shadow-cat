@@ -3,10 +3,16 @@
     <header>
       <div class="app-icon">
         <div class="app-logo-title">
-          <div class="app-logo"><img alt="Vue Logo" src="./assets/logo.png"></div>
+          <div class="app-logo">
+            <img alt="Vue Logo" src="./assets/logo.png" />
+          </div>
           <div class="app-title">VC-CAT</div>
         </div>
-        <div class="vc-anticon-menu-t" @click="changeExtend">
+        <div
+          class="vc-anticon-menu-t"
+          @click="changeExtend"
+          :title="clickTitle"
+        >
           <div class="vc-anticon-t"></div>
         </div>
       </div>
@@ -16,39 +22,51 @@
           <router-link to="/pattern">模式</router-link>
           <router-link to="/about">关于</router-link>
         </div>
-        <a class="github-item" href="https://github.com/blueskyawen/vc-shadow-cat" target="_blank">
+        <a
+          class="github-item"
+          href="https://github.com/blueskyawen/vc-shadow-cat"
+          target="_blank"
+        >
           <i class="fa fa-github" title="vc-Shadow-Cat"></i>
         </a>
       </div>
     </header>
     <transition mode="out-in">
-      <router-view/>
+      <router-view />
     </transition>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'app',
-  data () {
+  name: "app",
+  data() {
     return {
-    }
+      clickTitle: ""
+    };
   },
-  created: function () {
+  created: function() {
     if (screen.availWidth < 768) {
-      this.$store.commit('toggleSideBar')
+      this.$store.commit("toggleSideBar");
     }
+    this.setClickTitle();
   },
   methods: {
-    changeExtend: function () {
-      this.$store.commit('toggleSideBar')
+    changeExtend: function() {
+      this.$store.commit("toggleSideBar");
+      this.setClickTitle();
+    },
+    setClickTitle() {
+      this.clickTitle = this.$store.state.isShowSideBar
+        ? "收起目录"
+        : "展开目录";
     }
   }
-}
+};
 </script>
 
 <style scoped lang="less">
-.main-app  {
+.main-app {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -89,55 +107,57 @@ export default {
         }
       }
       .vc-anticon-menu-t {
-        height:inherit;
-        display:flex;
-        align-items:center;
-        position:relative;
-        margin-right:30px;
+        height: inherit;
+        display: flex;
+        align-items: center;
+        position: relative;
+        margin-right: 30px;
         .vc-anticon-t {
-          display:inline-block;
+          display: inline-block;
           width: 22px;
-          border:solid 1px #666;
-          border-radius:1px;
+          border: solid 1px #666;
+          border-radius: 1px;
         }
         &:before {
-          content:"";
-          display:inline-block;
+          content: "";
+          display: inline-block;
           width: 22px;
-          border:solid 1px #666;
-          border-radius:1px;
-          position:absolute;
+          border: solid 1px #666;
+          border-radius: 1px;
+          position: absolute;
           transform: translateX(-50%);
-          left:50%;
-          top:20px;
+          left: 50%;
+          top: 20px;
         }
         &:after {
-          content:"";
-          display:inline-block;
+          content: "";
+          display: inline-block;
           width: 22px;
-          border:solid 1px #666;
-          border-radius:1px;
-          position:absolute;
+          border: solid 1px #666;
+          border-radius: 1px;
+          position: absolute;
           transform: translateX(-50%);
-          left:50%;
-          bottom:20px;
+          left: 50%;
+          bottom: 20px;
         }
         &:hover {
-          cursor:pointer;
-          .vc-anticon-t, &:before, &:after {
-            border-color:#00cc99;
+          cursor: pointer;
+          .vc-anticon-t,
+          &:before,
+          &:after {
+            border-color: #00cc99;
           }
         }
       }
       &:after {
-        content:"";
-        display:inline-block;
+        content: "";
+        display: inline-block;
         height: 35%;
-        border:solid 1px #666;
-        border-radius:1px;
-        position:absolute;
-        top:50%;
-        right:0;
+        border: solid 1px #666;
+        border-radius: 1px;
+        position: absolute;
+        top: 50%;
+        right: 0;
         transform: translateY(-50%);
       }
     }
@@ -167,7 +187,7 @@ export default {
         text-decoration: none;
         height: inherit;
         position: absolute;
-        right:40px;
+        right: 40px;
         display: inline-flex;
         align-items: center;
         .fa-github {
@@ -176,10 +196,12 @@ export default {
       }
     }
   }
-  .v-enter-active, .v-leave-active {
-    transition: opacity .5s ease;
+  .v-enter-active,
+  .v-leave-active {
+    transition: opacity 0.5s ease;
   }
-  .v-enter, .v-leave-to {
+  .v-enter,
+  .v-leave-to {
     opacity: 0;
   }
 }
@@ -200,10 +222,10 @@ export default {
       position: relative;
       border-bottom: solid 1px #e6e6e6;
       .nc-anticon-menu-t {
-        margin-left:30px;
+        margin-left: 30px;
       }
       &:after {
-        display:none;
+        display: none;
       }
     }
     .app-menu {
@@ -216,7 +238,7 @@ export default {
       .github-item {
         height: inherit;
         font-size: 26px;
-        right:30px;
+        right: 30px;
       }
     }
   }

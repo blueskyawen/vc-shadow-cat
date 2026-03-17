@@ -18,7 +18,8 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "lib": "vue-cli-service build --target lib --name vc-shadow-cat --dest lib packages/index.js",
-    "build_less": "lessc ./common/vc-shadow-cat.less ./vc-shadow-cat.css"
+    "build_less": "lessc ./common/vc-shadow-cat.less ./vc-shadow-cat.css",
+    "lintFix": "vue-cli-service lint --fix"
   },
   "repository": {
     "type": "git",
