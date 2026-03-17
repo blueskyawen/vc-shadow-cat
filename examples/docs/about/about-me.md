@@ -24,6 +24,6 @@ V1.0.3
 
 ## 链接
 
-- [ng-Shadow-Cat](http://blueskyawen.com/ng-shadow-cat)
-- [Boot-Shadow](http://blueskyawen.com/boot-shadow)
+- [ng-Shadow-Cat](https://zeithink.xyz/ng-shadow-cat)
+- [Boot-Shadow](https://zeithink.xyz/boot-shadow)
 - [Vuejs](https://cn.vuejs.org/)  
